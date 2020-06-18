@@ -372,8 +372,13 @@ echo $row['address_line_one'];
                     }
                         ?>" autocomplete="off"></h1>
 
+
+
+                    <div class="tooltipaddproperty">
                         <a href="#" data-target="updatedetailstwo" 
-                    class="nav-link" id="update-btn-proceed">Next</a>        
+                    class="nav-link" id="update-btn-proceed">Next</a>   
+                    <span class="tooltiptextaddproperty">You can edit these details at any time.<br> 
+                    You can leave details empty if preferred.</span></div>          
                 
                 </div>
                 </div>

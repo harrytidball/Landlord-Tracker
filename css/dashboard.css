@@ -276,3 +276,45 @@ select:focus {
     visibility: visible;
     opacity: 1;
   }
+
+  
+
+
+
+  .tooltipaddproperty {
+    position: relative;
+  }
+  
+  .tooltipaddproperty .tooltiptextaddproperty {
+    visibility: hidden;
+    width: 350px;
+    background-color: #242582;
+    color: #FEFFFF;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    right: 20px;
+    bottom: 450px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding: 7px;
+    border: #FEFFFF;
+    border-style: solid;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+  }
+
+  .tooltipaddproperty .tooltiptextaddproperty::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-style: solid;
+    border-color: #FEFFFF transparent transparent transparent;
+  }
+
+  
+  .tooltipaddproperty:hover .tooltiptextaddproperty {
+    visibility: visible;
+    opacity: 1;
+  }

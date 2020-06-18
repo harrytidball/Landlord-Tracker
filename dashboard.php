@@ -218,8 +218,11 @@
                     <h1 class="rent-tenant-detail-new">Tenant Email:   <input type="email"
                         name="tenant-email" placeholder="Enter Email" autocomplete="off"></h1>
 
+                        <div class="tooltipaddproperty">
                         <a href="#" data-target="addnewpropertytwo" 
-                    class="nav-link" id="btn-proceed">Next</a>        
+                    class="nav-link" id="btn-proceed">Next</a>   
+                    <span class="tooltiptextaddproperty">You can edit these details at any time.<br> 
+                    You can leave details empty if preferred.</span></div>     
                 
                 </div>
                 </div>
