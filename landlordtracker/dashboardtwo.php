@@ -4,14 +4,24 @@
     $propertyChosen = $_POST['properties'];
 
     if ($propertyChosen == "1") {
-        $_SESSION["property"] = "5";
+        $_SESSION["property"] = "10";
     } else if ($propertyChosen == "1, 1") {
-        $_SESSION["property"] = "4";
+        $_SESSION["property"] = "9";
     } else if ($propertyChosen == "2, 1") {
-        $_SESSION["property"] = "3";
+        $_SESSION["property"] = "8";
     } else if ($propertyChosen == "3, 1") {
-        $_SESSION["property"] = "2";
+        $_SESSION["property"] = "7";
     } else if ($propertyChosen == "4, 1") {
+        $_SESSION["property"] = "6";
+    } else if ($propertyChosen == "5, 1") {
+        $_SESSION["property"] = "5";
+    } else if ($propertyChosen == "6, 1") {
+        $_SESSION["property"] = "4";
+    } else if ($propertyChosen == "7, 1") {
+        $_SESSION["property"] = "3";
+    } else if ($propertyChosen == "8, 1") {
+        $_SESSION["property"] = "2";
+    } else if ($propertyChosen == "9, 1") {
         $_SESSION["property"] = "1";
     }
 
@@ -114,6 +124,31 @@ echo $row['address_line_one'];
                     $result = mysqli_query($conn, $sql);
                     $row = mysqli_fetch_array($result);
                     $propertyPicked = $row['property_five'];
+                } else if ($property == "6") {
+                    $sql = "SELECT property_six FROM customer_details WHERE id = '" . $_SESSION['userId'] . "';";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $propertyPicked = $row['property_six'];
+                } else if ($property == "7") {
+                    $sql = "SELECT property_seven FROM customer_details WHERE id = '" . $_SESSION['userId'] . "';";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $propertyPicked = $row['property_seven'];
+                } else if ($property == "8") {
+                    $sql = "SELECT property_eight FROM customer_details WHERE id = '" . $_SESSION['userId'] . "';";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $propertyPicked = $row['property_eight'];
+                } else if ($property == "9") {
+                    $sql = "SELECT property_nine FROM customer_details WHERE id = '" . $_SESSION['userId'] . "';";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $propertyPicked = $row['property_nine'];
+                } else if ($property == "10") {
+                    $sql = "SELECT property_ten FROM customer_details WHERE id = '" . $_SESSION['userId'] . "';";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $propertyPicked = $row['property_ten'];
                 }
                 ?>
         

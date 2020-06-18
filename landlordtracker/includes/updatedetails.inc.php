@@ -32,32 +32,59 @@ $repairs = $_POST['repairs-other'];
 $misc = $_POST['misc-other'];
 
 $property = $_SESSION["property"];
-if ($property == "5") {
+if ($property == "10") {
     $sql = "SELECT address_id FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 1;";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
     $propertyPicked = $row['address_id'];
-} else if ($property == "4") {
+} else if ($property == "9") {
     $sql = "SELECT address_id FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 1, 1;";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
     $propertyPicked = $row['address_id'];
-} else if ($property == "3") {
+} else if ($property == "8") {
     $sql = "SELECT address_id FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 2, 1;";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
     $propertyPicked = $row['address_id'];
-} else if ($property == "2") {
+} else if ($property == "7") {
     $sql = "SELECT address_id FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 3, 1;";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
     $propertyPicked = $row['address_id'];
-} else if ($property == "1") {
+} else if ($property == "6") {
     $sql = "SELECT address_id FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 4, 1;";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
     $propertyPicked = $row['address_id'];
+} else if ($property == "5") {
+    $sql = "SELECT address_id FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 5, 1;";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $propertyPicked = $row['address_id'];
+} else if ($property == "4") {
+    $sql = "SELECT address_id FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 6, 1;";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $propertyPicked = $row['address_id'];
+} else if ($property == "3") {
+    $sql = "SELECT address_id FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 7, 1;";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $propertyPicked = $row['address_id'];
+} else if ($property == "2") {
+    $sql = "SELECT address_id FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 8, 1;";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $propertyPicked = $row['address_id'];
+} else if ($property == "1") {
+    $sql = "SELECT address_id FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 9, 1;";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $propertyPicked = $row['address_id'];
 }
+
+
 
     if (isset($originalDeposit) && trim($originalDeposit) !== '') {
     $sql = "UPDATE address SET deposit = ? WHERE address_id = '$propertyPicked';";

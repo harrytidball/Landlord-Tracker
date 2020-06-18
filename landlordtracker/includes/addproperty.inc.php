@@ -74,7 +74,26 @@ $sql = "SELECT property_five FROM customer_details WHERE id = '" . $_SESSION['us
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 $propertyFive = $row['property_five'];
-
+$sql = "SELECT property_six FROM customer_details WHERE id = '" . $_SESSION['userId'] . "';";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+$propertySix = $row['property_six'];
+$sql = "SELECT property_seven FROM customer_details WHERE id = '" . $_SESSION['userId'] . "';";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+$propertySeven = $row['property_seven'];
+$sql = "SELECT property_eight FROM customer_details WHERE id = '" . $_SESSION['userId'] . "';";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+$propertyEight = $row['property_eight'];
+$sql = "SELECT property_nine FROM customer_details WHERE id = '" . $_SESSION['userId'] . "';";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+$propertyNine = $row['property_nine'];
+$sql = "SELECT property_ten FROM customer_details WHERE id = '" . $_SESSION['userId'] . "';";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+$propertyTen = $row['property_ten'];
 
     if ($propertyOne == 0 || $propertyOne == NULL) {
 // Retrieving the address ID for the user's first created property
@@ -156,7 +175,102 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
         mysqli_stmt_bind_param($stmt, "i", $addressIdFive);
         mysqli_stmt_execute($stmt);
     } 
+} else if (($propertySix == 0 || $propertySix == NULL) && ($propertyOne !== 0 || $propertyOne !== NULL) && 
+($propertyTwo !== 0 || $propertyTwo !== NULL) && ($propertyThree !== 0 || $propertyThree !== NULL)
+&& ($propertyFour !== 0 || $propertyFour !== NULL) && ($propertyFive !== 0 || $propertyFive !== NULL)) {
+    $sql = "SELECT address_id FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 1;";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $addressIdSix = $row['address_id'];
+        
+        $sql = "UPDATE customer_details SET property_six = ? WHERE id = '" . $_SESSION['userId'] . "';";
+    
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "SQL statement failed";
+    } else {
+        mysqli_stmt_bind_param($stmt, "i", $addressIdSix);
+        mysqli_stmt_execute($stmt);
+    } 
+} else if (($propertySeven == 0 || $propertySeven == NULL) && ($propertyOne !== 0 || $propertyOne !== NULL) && 
+($propertyTwo !== 0 || $propertyTwo !== NULL) && ($propertyThree !== 0 || $propertyThree !== NULL)
+&& ($propertyFour !== 0 || $propertyFour !== NULL) && ($propertyFive !== 0 || $propertyFive !== NULL) && 
+($propertySix !== 0 || $propertySix !== NULL)) {
+    $sql = "SELECT address_id FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 1;";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $addressIdSeven = $row['address_id'];
+        
+        $sql = "UPDATE customer_details SET property_seven = ? WHERE id = '" . $_SESSION['userId'] . "';";
+    
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "SQL statement failed";
+    } else {
+        mysqli_stmt_bind_param($stmt, "i", $addressIdSeven);
+        mysqli_stmt_execute($stmt);
+    } 
+} else if (($propertyEight == 0 || $propertyEight == NULL) && ($propertyOne !== 0 || $propertyOne !== NULL) && 
+($propertyTwo !== 0 || $propertyTwo !== NULL) && ($propertyThree !== 0 || $propertyThree !== NULL)
+&& ($propertyFour !== 0 || $propertyFour !== NULL) && ($propertyFive !== 0 || $propertyFive !== NULL) && 
+($propertySix !== 0 || $propertySix !== NULL) && ($propertySeven !== 0 || $propertySeven !== NULL)) {
+    $sql = "SELECT address_id FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 1;";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $addressIdEight = $row['address_id'];
+        
+        $sql = "UPDATE customer_details SET property_eight = ? WHERE id = '" . $_SESSION['userId'] . "';";
+    
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "SQL statement failed";
+    } else {
+        mysqli_stmt_bind_param($stmt, "i", $addressIdEight);
+        mysqli_stmt_execute($stmt);
+    } 
+} else if (($propertyNine == 0 || $propertyNine == NULL) && ($propertyOne !== 0 || $propertyOne !== NULL) && 
+($propertyTwo !== 0 || $propertyTwo !== NULL) && ($propertyThree !== 0 || $propertyThree !== NULL)
+&& ($propertyFour !== 0 || $propertyFour !== NULL) && ($propertyFive !== 0 || $propertyFive !== NULL) && 
+($propertySix !== 0 || $propertySix !== NULL) && ($propertySeven !== 0 || $propertySeven !== NULL) 
+&& ($propertyEight !== 0 || $propertyEight !== NULL)) {
+    $sql = "SELECT address_id FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 1;";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $addressIdNine = $row['address_id'];
+        
+        $sql = "UPDATE customer_details SET property_nine = ? WHERE id = '" . $_SESSION['userId'] . "';";
+    
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "SQL statement failed";
+    } else {
+        mysqli_stmt_bind_param($stmt, "i", $addressIdNine);
+        mysqli_stmt_execute($stmt);
+    } 
+} else if (($propertyTen == 0 || $propertyTen == NULL) && ($propertyOne !== 0 || $propertyOne !== NULL) && 
+($propertyTwo !== 0 || $propertyTwo !== NULL) && ($propertyThree !== 0 || $propertyThree !== NULL)
+&& ($propertyFour !== 0 || $propertyFour !== NULL) && ($propertyFive !== 0 || $propertyFive !== NULL) && 
+($propertySix !== 0 || $propertySix !== NULL) && ($propertySeven !== 0 || $propertySeven !== NULL) 
+&& ($propertyEight !== 0 || $propertyEight !== NULL) && ($propertyNine !== 0 || $propertyNine !== NULL)) {
+    $sql = "SELECT address_id FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 1;";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $addressIdTen = $row['address_id'];
+        
+        $sql = "UPDATE customer_details SET property_ten = ? WHERE id = '" . $_SESSION['userId'] . "';";
+    
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "SQL statement failed";
+    } else {
+        mysqli_stmt_bind_param($stmt, "i", $addressIdTen);
+        mysqli_stmt_execute($stmt);
+    } 
 } 
+
+
+
+
 
 header("Location: ../dashboard.php");
 exit();

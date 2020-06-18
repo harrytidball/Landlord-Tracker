@@ -90,20 +90,69 @@
             ?>
           </li></option>
 
-    
+          <option value="5, 1">
+            <li class="choose-property">
+            <?php
+                      $sql = "SELECT address_line_one FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 5, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['address_line_one'];  
+            ?>
+          </li></option>
+
+          <option value="6, 1">
+            <li class="choose-property">
+            <?php
+                      $sql = "SELECT address_line_one FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 6, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['address_line_one'];  
+            ?>
+          </li></option>
+
+          <option value="7, 1">
+            <li class="choose-property">
+            <?php
+                      $sql = "SELECT address_line_one FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 7, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['address_line_one'];  
+            ?>
+          </li></option>
+
+          <option value="8, 1">
+            <li class="choose-property">
+            <?php
+                      $sql = "SELECT address_line_one FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 8, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['address_line_one'];  
+            ?>
+          </li></option>
+
+          <option value="9, 1">
+            <li class="choose-property">
+            <?php
+                      $sql = "SELECT address_line_one FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT 9, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['address_line_one'];  
+            ?>
+          </li></option>
+
             </select>
             </form></li>
         
         <li class="home-menu"><a href="#" data-target="addnewpropertyone" class="nav-link"><?php
-        if ($amountOfProperties < 5) {
+        if ($amountOfProperties < 10) {
             echo "Add New Property";
         } 
         ?></a></li>
      
      <li class="home-menu-error">
      <?php
-        if ($amountOfProperties > 4) {
-            echo "Add New Property <br> (You have reached the maximum of 5)";
+        if ($amountOfProperties > 9) {
+            echo "Add New Property <br> (You have reached the maximum of 10)";
         } 
         ?></a>
         </div>
