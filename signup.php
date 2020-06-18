@@ -25,19 +25,20 @@
               <button type="submit" name="signup-submit">Sign Up</button>
               </form>
 
+            <script>
               <?php
               if (isset($_GET['error'])) {
                 if ($_GET['error'] == "emptyfields") {
-                  echo '<p class="sign-up-error">Please fill in all fields.</p>';
+                   ?>alert('Please fill in all fields.');<?php
                 } 
                 else if ($_GET['error'] == "invalidmail") {
-                    echo '<p class="sign-up-error">Invalid email.</p>';
+                  ?>alert('Invalid email.');<?php
                   }
                   else if ($_GET['error'] == "passwordcheck") {
-                    echo '<p class="sign-up-error">Passwords do not match.</p>';
+                    ?>alert('Passwords do not match. Please try again.');<?php
                 } 
                 else if ($_GET['error'] == "emailinuse") {
-                  echo '<p class="sign-up-error">This email is already in use.</p>';
+                  ?>alert('This email is already in use.');<?php
               
               }
             }
@@ -47,6 +48,7 @@
                 }
             }
             ?>
+            </script>
                       
             </div>
 
