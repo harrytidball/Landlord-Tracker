@@ -39,7 +39,12 @@
                 } 
                 else if ($_GET['error'] == "emailinuse") {
                   ?>alert('This email is already in use.');<?php
-              
+              }
+              else if ($_GET['error'] == "passwordlength") {
+                ?>alert('Password too short. Password needs to be at least 6 characters long.')<?php
+              }
+              else if ($_GET['error'] == "notnumeric") {
+                ?>alert('Please include both letters and numbers in your password.')<?php
               }
             }
                 else if (isset($_GET['signup'])) {

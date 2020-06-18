@@ -45,8 +45,8 @@ not make this request, you can ignore this email.</p>';
 $message .= '<p>Here is your password reset link: <br>';
 $message .=  '<a href="' . $url . '">' . $url . '</a></p>';
 
-$headers = "From: Landlord Tracker <help@landlordtracker.co.uk>\r\n";
-$headers .= "Reply-To: help@landlordtracker.co.uk\r\n";
+$headers = "From: Landlord Tracker <support@landlordtracker.co.uk>\r\n";
+$headers .= "Reply-To: support@landlordtracker.co.uk\r\n";
 $header .= "Content-Type: text/html\r\n";
 
 mail($to, $subject, $message, $headers);

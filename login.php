@@ -45,6 +45,7 @@ session_start();
 
     ?>
 
+    <script>
     <?php
     if (isset($_SESSION['userId'])) {
         header("Location: ../dashboard.php");
@@ -52,13 +53,18 @@ session_start();
     }
     if (isset($_GET['error'])) {
         if ($_GET['error'] == "emptyfields") {
-            echo '<p class="log-in-error">Please fill in all fields.</p>';
+            ?>alert('Please fill in all fields.');<?php
         }
         else if ($_GET['error'] == "wrongpwd") {
-            echo '<p class="log-in-error">Incorrect password.</p>';
+            ?>alert('Email address or password is incorrect.');<?php
+          }
+          else if ($_GET['error'] == "wrongemail") {
+            ?>alert('Email address or password is incorrect.');<?php
           }
     }
     ?>
+
+    </script>
 
 </main>
 </div>

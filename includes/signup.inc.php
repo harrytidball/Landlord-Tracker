@@ -21,6 +21,15 @@ if (isset($_POST['signup-submit'])) {
     }
     else if (strlen($password) < 6) {
         header("Location: ../signup.php?error=passwordlength");
+        exit();
+    }
+    else if (is_numeric($password) == false) {
+        header("Location: ../signup.php?error=notnumeric");
+        exit();
+    }
+    else if (ctype_digit($password) == true) {
+        header("Location: ../signup.php?error=notnumeric");
+        exit();
     }
     // Checks that both passwords match
     else if ($password !== $passwordRepeat) {
