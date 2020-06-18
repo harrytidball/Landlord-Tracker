@@ -1,0 +1,278 @@
+#log-out-link {
+    font-size: 34px;
+    position: fixed;
+    top: 40px;
+    right: 50px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    color: #FEFFFF;
+    font-weight: 100;
+    font-family: 'segoe ui';
+   
+}
+
+#log-out-link:hover,
+#log-out-link:focus {
+  color: #F64C72;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #F64C72;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+#btn-proceed:hover,
+#btn-proceed:focus {
+  color: #FEFFFF;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+#delete-link {
+    font-size: 38px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    color: #FEFFFF;
+    font-weight: 100;
+    font-family: 'segoe ui';
+}
+
+#delete-link:hover,
+#delete-link:focus {
+  color: #F64C72;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+  #btn-proceed {
+    font-size: 38px;
+    position: fixed;
+    top: 175px;
+    right: 85px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    color: #F64C72;
+    font-weight: 100;
+    font-family: 'segoe ui';
+  }
+
+#btn-create:hover,
+#btn-create:focus {
+  color: #FEFFFF;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+  #btn-create {
+    font-size: 38px;
+    position: fixed;
+    top: 175px;
+    right: 60px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    color: #F64C72;
+    font-weight: 100;
+    font-family: 'segoe ui';
+  }
+
+
+  #update-btn-proceed {
+    font-size: 38px;
+    position: fixed;
+    top: 175px;
+    right: 65px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    color: #F64C72;
+    font-weight: 100;
+    font-family: 'segoe ui';
+  }
+
+  #update-btn-proceed:hover,
+  #update-btn-proceed:focus {
+    color: #FEFFFF;
+    transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+  }
+
+  #btn-update {
+    font-size: 38px;
+    position: fixed;
+    top: 175px;
+    right: 30px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    color: #F64C72;
+    font-weight: 100;
+    font-family: 'segoe ui';
+  }
+
+  #btn-update:hover,
+  #btn-update:focus {
+    color: #FEFFFF;
+    transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+  }
+
+.heading {
+  font-size: 28px;
+  position: fixed;
+  right: 15px;
+  top: 120px;
+  font-weight: 100;
+}
+
+#go-back-link {
+    font-size: 28px;
+    position: fixed;
+    left: 10px;
+    top: 145px;
+}
+
+
+.column-3 {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row-3:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+select {
+  width: 400px;
+  height: 60px;
+  left: 515px;
+  top: 250px;
+  font-size: 32px;
+  font-weight: 100;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: #2F2FA2;
+  color: #FEFFFF;
+  padding-top: 130px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px;
+  text-align-last: center;
+  
+/* Adding transition effect */
+transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+select option {
+  color: #FEFFFF;
+  font-weight: 100;
+  font-size: 32px;
+  text-align-last: center;
+}
+
+select:hover,
+select:focus {
+  color: #F64C72;
+}
+
+  /* For IE <= 11 */
+  select::-ms-expand {
+    display: none;
+  }
+
+  .delete-warning {
+    text-align: center;
+    font-weight: 100;
+    font-size: 32px;
+  }
+
+  .delete-warning-address {
+    text-align: center;
+    font-weight: 100;
+    font-size: 32px;
+    color: #F64C72;
+  }
+
+  .tooltip {
+    position: relative;
+
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 400px;
+    background-color: #242582;
+    color: #FEFFFF;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 65%;
+    left: 50%;
+    margin-left: -200px;
+    opacity: 0;
+    padding: 7px;
+    transition: opacity 0.3s;
+    border: #FEFFFF;
+    border-style: solid;
+    font-size: 18px;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #FEFFFF transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+  .tooltipadd {
+    position: relative;
+  }
+  
+  .tooltipadd .tooltiptextadd {
+    visibility: hidden;
+    width: 400px;
+    background-color: #242582;
+    color: #FEFFFF;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    left: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding: 7px;
+    border: #FEFFFF;
+    border-style: solid;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+  }
+
+  .tooltipadd .tooltiptextadd::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-style: solid;
+    border-color: #FEFFFF transparent transparent transparent;
+  }
+
+  
+  .tooltipadd:hover .tooltiptextadd {
+    visibility: visible;
+    opacity: 1;
+  }
