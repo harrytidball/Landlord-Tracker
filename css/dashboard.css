@@ -270,16 +270,11 @@ select:focus {
     border-style: solid;
     border-color: #FEFFFF transparent transparent transparent;
   }
-
   
   .tooltipadd:hover .tooltiptextadd {
     visibility: visible;
     opacity: 1;
   }
-
-  
-
-
 
   .tooltipaddproperty {
     position: relative;

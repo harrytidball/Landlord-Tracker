@@ -23,7 +23,7 @@ if (empty($mailuid) || empty($password)) {
         header("Location: ../login.php?error=sqlerror");
         exit();
     } else {
-        // Pass in parameters into database that the users provided, double 's' as we're passing two strings (email and pw)
+        // Pass in parameters into database that the users provided
         mysqli_stmt_bind_param($stmt, "s", $mailuid);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);

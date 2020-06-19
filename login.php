@@ -30,10 +30,10 @@ session_start();
     <input type="password" class="password-styling" name="pwd" placeholder="Password">
     <button type="submit" name="login-submit">Log In</button><br><br>
     
-    <a href="forgotpassword.php"><span style="color:#242582">..........................</span>
+    <a href="forgotpassword.php" id="forgot-pwd"><span style="color:#242582">..................</span>
     Forgot Password?</a><br><br>
-    <a href="signup.php"><span style="color:#242582">..........................
-    .........</span><span style="color:#FEFFFF">Sign Up</a></span> 
+    <a href="signup.php" id="sign-up-log-in"><span style="color:#242582">...................
+    .........</span>Sign Up</a>
     </form>
 
     <?php
@@ -58,7 +58,7 @@ session_start();
         else if ($_GET['error'] == "wrongpwd") {
             ?>alert('Email address or password is incorrect.');<?php
           }
-          else if ($_GET['error'] == "wrongemail") {
+          else if ($_GET['error'] == "emailerror") {
             ?>alert('Email address or password is incorrect.');<?php
           }
     }
