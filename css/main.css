@@ -56,14 +56,53 @@ body {
 }
 
 #log-in-link {
-  font-size: 34px;
+  font-size: 28px;
   position: fixed;
-  top: 40px;
-  right: 50px;
+  top: 50px;
+  right: 130px;
 }
 
 #log-in-link:hover,
 #log-in-link:focus {
+  color: #F64C72;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+#blog-link {
+  font-size: 28px;
+  position: fixed;
+  top: 50px;
+  right: 330px;
+}
+
+#blog-link:hover,
+#blog-link:focus {
+  color: #F64C72;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+#pricing-link {
+  font-size: 28px;
+  position: fixed;
+  top: 50px;
+  right: 530px;
+}
+
+#pricing-link:hover,
+#pricing-link:focus {
+  color: #F64C72;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+#features-link {
+  font-size: 28px;
+  position: fixed;
+  top: 50px;
+  right: 730px;
+}
+
+#features-link:hover,
+#features-link:focus {
   color: #F64C72;
   transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
 }
@@ -306,10 +345,15 @@ img {
 }
 
 #sign-up-here {
-  color: #F64C72;
   font-weight: 300;
   font-size: 40px;
   cursor: pointer;
+}
+
+#sign-up-here:hover,
+#sign-up-here:focus {
+  color: #F64c72;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
 
