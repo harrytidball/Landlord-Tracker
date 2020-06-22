@@ -11,7 +11,7 @@
   
           <div class="main">
             <br><br>
-            <a href="loggedout.html" class="sign" align="center"><span style="color:#242582">....</span>Landlord<span style="color:#F64C72">Tracker</p></a></span>
+            <a href="index.php" class="sign" align="center"><span style="color:#242582">....</span>Landlord<span style="color:#F64C72">Tracker</p></a></span>
               <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
               <div class="form-gap"></div>
              <div class="container">

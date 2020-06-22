@@ -18,7 +18,7 @@ session_start();
 <body>
 
 <div class="main"><br><br>
-<a href="loggedout.html" class="sign" align="center"><span style="color:#242582">...
+<a href="index.php" class="sign" align="center"><span style="color:#242582">...
 </span>Landlord<span style="color:#F64C72">Tracker</a></span>
 <br><br><br>
 
