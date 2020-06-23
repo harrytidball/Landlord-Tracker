@@ -33,7 +33,16 @@
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
         $amountOfProperties = $row['propertyTotal'];  
+
+        $sql = "SELECT COUNT(*) as contractorTotal FROM contractors WHERE id = '" . $_SESSION['userId'] . "';";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
+        $amountOfContractors = $row['contractorTotal'];  
         ?>
+
+<div class="row-home">
+  <div class="column-home">
+
     
         <li class="home-menu"><form method="post" action="dashboardtwo.php">
             
@@ -142,8 +151,8 @@
 
             </select>
             </form></li>
-        
-        <li class="home-menu"><a href="#" data-target="addnewpropertyone" class="nav-link"><?php
+
+            <li class="home-menu"><a href="#" data-target="addnewpropertyone" class="nav-link"><?php
         if ($amountOfProperties < 10) {
             echo "Add New Property";
         } 
@@ -155,7 +164,215 @@
             echo "Add New Property <br> (You have reached the maximum of 10)";
         } 
         ?></a>
+
+            </div>
+
+            <div class="column-home">
+
+            <li class="home-menu"><form method="post" action="dashboardcontractors.php">
+
+            <select name="contractors" onchange="this.form.submit();">
+
+            <option value="">Select Contractor</option>
+            <option value="1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+            </li></option>
+            <option value="1, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 1, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+            </li></option>
+            <option value="2, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 2, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+            </li></option>
+            <option value="3, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 3, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+            </li></option>
+            <option value="4, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 4, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+            </li></option>
+            <option value="5, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 5, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+            </li></option>
+            <option value="6, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 6, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+            </li></option>
+            <option value="7, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 7, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+            </li></option>
+            <option value="8, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 8, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+            </li></option>
+            <option value="9, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 9, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+        </li></option>
+        <option value="10, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 10, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+        </li></option>
+        <option value="11, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 11, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+        </li></option>
+        <option value="12, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 12, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+        </li></option>
+        <option value="13, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 13, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+        </li></option>
+        <option value="14, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 14, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+        </li></option>
+        <option value="15, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 15, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+        </li></option>
+        <option value="16, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 16, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+        </li></option>
+        <option value="17, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 17, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+        </li></option>
+        <option value="18, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 18, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+        </li></option>
+        <option value="19, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 19, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+        </li></option>
+        <option value="20, 1">
+            <li class="choose-contractor">
+            <?php
+                      $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT 20, 1;";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result);
+                      echo $row['contractor_name'];  
+            ?>
+        </li></option>
+
+</select>
+</form></li>
+
+
+        
+
         </div>
+        </div>
+</div>
 
 
         <div class="page" id="addnewpropertyone">

@@ -1,3 +1,21 @@
+.column-home {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row-home:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column-home {
+    width: 100%;
+  }
+}
+
 #log-out-link {
     font-size: 34px;
     position: fixed;
@@ -313,3 +331,4 @@ select:focus {
     visibility: visible;
     opacity: 1;
   }
+
