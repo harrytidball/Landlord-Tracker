@@ -23,7 +23,7 @@ if (isset($_POST['signup-submit'])) {
         header("Location: ../signup.php?error=passwordlength");
         exit();
     }
-    else if (is_numeric($password) == false) {
+    else if (!preg_match('~[0-9]+~', $password)) {
         header("Location: ../signup.php?error=notnumeric");
         exit();
     }
