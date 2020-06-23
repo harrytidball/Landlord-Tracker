@@ -73,8 +73,8 @@ if (isset($_POST['signup-submit'])) {
                         $to = $email;
                         $subject = "Email Verification";
                         $message = "Please click this link to verify your account: 
-                            <a href='http://localhost/verify.php?vkey=$vkey'>Register Account</a>";
-                        $headers = "From: help@landlordtracker.co.uk";
+                            <a href='http://landlordtracker.co.uk/verify.php?vkey=$vkey'>Register Account</a>";
+                        $headers = "From: support@landlordtracker.co.uk";
                         $headers = "MIME-Version: 1.0" . "\r\n";
                         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 

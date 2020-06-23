@@ -84,5 +84,5 @@ if (isset($_POST["reset-password-submit"])) {
     }
 }
 } else {
-    header("Location: ../loggedout.html");
+    header("Location: ../index.php");
 }

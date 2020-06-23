@@ -54,5 +54,5 @@ mail($to, $subject, $message, $headers);
 header("Location: ../resetpassword.php?reset=success");
 
 } else {
-    header("Location ../loggedout.html");
+    header("Location ../index.php");
 }
