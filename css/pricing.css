@@ -1,0 +1,79 @@
+.main {
+  background-color: #242582;
+  width: 700px;
+  height: 525px;
+  margin: 9em auto;
+  border-radius: 1.5em;
+}
+
+.pricing-title {
+    color: #FEFFFF;
+    letter-spacing: -2px;
+    font-weight: 450;
+    font-size: 45px;
+    position: fixed;
+    left: 550px;
+    top: 150px;
+  }
+
+.pricing-para {
+    letter-spacing: -1px;
+    font-weight: 300;
+    font-size: 30px;
+    color: #FEFFFF;
+    position: fixed;
+    left: 250px;
+    top: 270px;
+  }
+
+  .pricing-para-features {
+    letter-spacing: -1px;
+    font-weight: 300;
+    font-size: 35px;
+    position: fixed;
+    left: 647px;
+    top: 316px;
+  }
+
+  #features-pricing-link {
+    color: #F64C72;
+  }
+
+  .pricing-para-signup {
+    letter-spacing: -1px;
+    font-weight: 300;
+    font-size: 35px;
+    position: fixed;
+    left: 307px;
+    top: 576px;
+  }
+
+  #features-pricing-link {
+    color: #F64C72;
+  }
+
+  .pricing-para-two {
+    letter-spacing: -1px;
+    font-weight: 300;
+    font-size: 35px;
+    color: #FEFFFF;
+    position: fixed;
+    left: 250px;
+    top: 400px;
+  }
+
+  .pricing-para-three {
+    letter-spacing: -1px;
+    font-weight: 300;
+    font-size: 35px;
+    color: #FEFFFF;
+    position: fixed;
+    left: 250px;
+    top: 530px;
+  }
+
+  #features-pricing-link:hover,
+#features-pricing-link:focus {
+  color: #FEFFFF;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}

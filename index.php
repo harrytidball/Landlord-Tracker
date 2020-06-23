@@ -19,7 +19,6 @@
 
       <a href="features.php" id="features-link">Features</a>
 
-  
         </div>
 
         <div class="header-card">
