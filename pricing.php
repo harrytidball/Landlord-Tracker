@@ -21,18 +21,21 @@
 
         </div>
 
-        <h1 class="pricing-title">Our Pricing<span style="color:#F64C72"> Structure</span></h1>
+    
         
     <div class="main">
-        <p class="pricing-para">We offer one simple pricing structure. For £6.99/month you will benefit <br>from all of Landlord Tracker's</p>
-            <p class="pricing-para-features"><a href="features.php" id="features-pricing-link">features.<a></p>
-    
-            <p class="pricing-para-two">There are no long-term commitments when signing up as you are able<br> to cancel at any time
-            and you are billed monthly.
-            <a href="features.php"><a></p>
-
-            <p class="pricing-para-three">We offer a 30 day free trial with no requirement for card details so why<br> not</p>
-            <p class="pricing-para-signup"><a href="signup.php" id="features-pricing-link">sign up now?</p>
+    <h1 class="pricing-title"><span style="color:#242582">.................</span>Pricing</h1>
+        <br><br><br><br><br>
+            <p class="pricing-features">• £6.99/month</p>
+            <p class="pricing-features">• Billed Monthly</p>
+            <p class="pricing-features">• Manage Up To 10 Properties</p>
+            <p class="pricing-features">• Cancel Anytime</p>
+            <p class="pricing-features">• Email Support</p>
+        <br>
+ 
+            <p class="start-trial-link"><a href="signup.php" id="features-pricing-link">Start your 30 day free trial.
+            <br>No card details needed.</p>
+          
                  
         </div>
         
