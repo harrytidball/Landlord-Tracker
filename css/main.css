@@ -246,6 +246,16 @@ body {
     font-size: 28px;
   }
 
+  .contractor-detail-new {
+    letter-spacing: -0.5px;
+    font-weight: 100;
+    left: 480px;
+    position: fixed;
+    padding-top: 50px;
+    text-align: left;
+    font-size: 28px;
+  }
+
   .projected-detail, .profit-loss-detail {
     padding-bottom: 10px;
   }
