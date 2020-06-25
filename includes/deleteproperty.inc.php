@@ -57,13 +57,10 @@ if (isset($_POST['delete-property'])) {
         $propertyPicked = $row['address_id'];
     }
 
-
-
 $sql = "DELETE FROM address WHERE address_id = '$propertyPicked';";
 if(mysqli_query($conn, $sql)) { 
     echo "Property was deleted successfully."; 
 }  
-
 
 $nullValue = "0";
 
