@@ -175,8 +175,6 @@ body {
     font-weight: 100;
 }
 
-
-
 .upfront-costs {
     float: left;
   }
@@ -205,12 +203,21 @@ body {
     clear: both;
   }
 
-  .expense-types, .expense-types-new {
+  .expense-types, .expense-types-new, .contractor-types {
     color: #FEFFFF;
     text-align: center;
     font-size: 28px;
   }
 
+  .contractor-types {
+    padding: 14px;
+  }
+
+#update-contractor-link:hover,
+#update-contractor-link:focus {
+  color: #F64C72;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
 
   .rent-tenant-detail {
     padding-top: 25px;

@@ -84,8 +84,6 @@ if ($property == "10") {
     $propertyPicked = $row['address_id'];
 }
 
-
-
     if (isset($originalDeposit) && trim($originalDeposit) !== '') {
     $sql = "UPDATE address SET deposit = ? WHERE address_id = '$propertyPicked';";
    $stmt = mysqli_stmt_init($conn);

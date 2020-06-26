@@ -115,6 +115,25 @@ a:focus {
     font-family: 'segoe ui';
   }
 
+  #update-contractor-btn {
+    font-size: 38px;
+    position: fixed;
+    top: 175px;
+    right: 32px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    color: #F64C72;
+    font-weight: 100;
+    font-family: 'segoe ui';
+  }
+
+  #update-contractor-btn:hover,
+#update-contractor-btn:focus {
+  color: #FEFFFF;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
   #update-btn-proceed {
     font-size: 38px;
     position: fixed;
