@@ -61,6 +61,9 @@ session_start();
           else if ($_GET['error'] == "emailerror") {
             ?>alert('Email address or password is incorrect.');<?php
           }
+          else if ($_GET['error'] == "notverified") {
+            ?>alert('Your account has not yet been verified. Please check your email for a verification link.');<?php
+          }
     }
     ?>
 

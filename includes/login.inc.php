@@ -11,6 +11,18 @@ require 'dbh.inc.php';
 $mailuid = $_POST['mailuid'];  
 $password = $_POST['pwd']; 
 
+//$sql = "SELECT verified FROM customer_details WHERE user_email=?;";
+//$stmt = mysqli_stmt_init($conn);
+//mysqli_stmt_bind_param($stmt, "s", $mailuid);
+//mysqli_stmt_execute($stmt);
+//mysqli_stmt_bind_result($stmt, $verified);
+
+//OPEN TO SQL INJECTION - REPLACE WITH PREPARED STATEMENT
+$sql = "SELECT verified FROM customer_details WHERE user_email='$mailuid';";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+$verified = $row['verified'];  
+
 if (empty($mailuid) || empty($password)) {
     header("Location: ../login.php?error=emptyfields");
     exit();
@@ -33,8 +45,9 @@ if (empty($mailuid) || empty($password)) {
             if ($pwdCheck == false) {
                 header("Location: ../login.php?error=wrongpwd");
                 exit(); 
-            } else if ($verified == 2) {
-                echo "This account has not yet been verified. Please check your email for a verification link.";
+            } else if ($verified !== "1") {
+                header("Location: ../login.php?error=notverified");
+                exit(); 
             } else if ($pwdCheck == true) {
                 session_start();
                 $_SESSION['userId'] = $row['id'];
