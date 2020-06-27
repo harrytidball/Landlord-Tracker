@@ -25,35 +25,32 @@
               <button type="submit" name="signup-submit">Sign Up</button>
               </form>
 
-            <script>
+            
               <?php
               if (isset($_GET['error'])) {
                 if ($_GET['error'] == "emptyfields") {
-                   ?>alert('Please fill in all fields.');<?php
+                   ?><script>alert('Please fill in all fields.');</script><?php
                 } 
                 else if ($_GET['error'] == "invalidmail") {
-                  ?>alert('Invalid email.');<?php
+                  ?><script>alert('Invalid email.');</script><?php
                   }
                   else if ($_GET['error'] == "passwordcheck") {
-                    ?>alert('Passwords do not match. Please try again.');<?php
+                    ?><script>alert('Passwords do not match. Please try again.');</script><?php
                 } 
                 else if ($_GET['error'] == "emailinuse") {
-                  ?>alert('This email is already in use.');<?php
+                  ?><script>alert('This email is already in use.');</script><?php
               }
               else if ($_GET['error'] == "passwordlength") {
-                ?>alert('Password too short. Password needs to be at least 6 characters long.')<?php
+                ?><script>alert('Password too short. Password needs to be at least 6 characters long.');</script><?php
               }
               else if ($_GET['error'] == "notnumeric") {
-                ?>alert('Please include both letters and numbers in your password.')<?php
+                ?><script>alert('Please include both letters and numbers in your password.');</script><?php
+
               }
             }
-                else if (isset($_GET['signup'])) {
-                if ($_GET['signup'] == "success") {
-                  echo '<p class="sign-up-error">Sign up successful.</p>';
-                }
-            }
+
             ?>
-            </script>
+         
                       
             </div>
 

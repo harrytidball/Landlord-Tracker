@@ -1,5 +1,6 @@
 <?php
 session_start(); 
+include_once 'includes/dbh.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +23,25 @@ session_start();
 </span>Landlord<span style="color:#F64C72">Tracker</a></span>
 <br><br><br>
 
+<?php
+
+if (isset($_GET['signup'])) {
+                if ($_GET['signup'] == "success") {
+                $email = $_SESSION['email2'];
+                $vkey = $_SESSION['vkey2'];
+
+                    $to = $email;
+                  $from = "support@landlordtracker.co.uk";
+                  $subject = "Email Verification";
+                  $message = "Please click this link to verify your account: 
+                      <a href='http://landlordtracker.co.uk/verify.php?vkey=$vkey'>Register Account</a>";
+                  $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                  mail($to, $subject, $message, $headers);
+
+                }
+            }
+?>
 
 <body style="background-color:#2F2FA2;"></body>
 

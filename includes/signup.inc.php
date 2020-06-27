@@ -5,7 +5,7 @@ if (isset($_POST['signup-submit'])) {
     require 'dbh.inc.php';
 
     // The input that we want
-    $email = $_POST['mail'];    
+    $email = $_POST['mail'];
     $password = $_POST['pwd'];
     $passwordRepeat = $_POST['pwd-repeat'];
 
@@ -65,31 +65,16 @@ if (isset($_POST['signup-submit'])) {
 
                     mysqli_stmt_bind_param($stmt, "sss", $email, $hashedPwd, $vkey);
                     mysqli_stmt_execute($stmt);
-                    // mysqli_stmt_store_result($stmt);  don't need this statement as we're inserting into DB not fetching
-                    header("Location: ../signup.php?signup=success");
+                    session_start();
+                    $_SESSION['email2'] = $email;
+                    $_SESSION['vkey2'] = $vkey;
+                    header("Location: ../verificationsent.php?signup=success");
                     exit();
-                    
-                    if ($insert) {
-                        $to = $email;
-                        $subject = "Email Verification";
-                        $message = "Please click this link to verify your account: 
-                            <a href='http://landlordtracker.co.uk/verify.php?vkey=$vkey'>Register Account</a>";
-                        $headers = "From: support@landlordtracker.co.uk";
-                        $headers = "MIME-Version: 1.0" . "\r\n";
-                        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-                        mail($to, $subject, $message, $headers);
-
-                        header("Location: ../verificationsent.php?signup=success");
-                    } 
                 } 
             }       
         }
     }
     mysqli_stmt_close($stmt);
     mysql_close($conn);
-}
-else {
-    header("Location: ../signup.php?signup=success");
-    exit();
 }

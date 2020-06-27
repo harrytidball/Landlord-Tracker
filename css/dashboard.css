@@ -129,7 +129,7 @@ a:focus {
   }
 
   #update-contractor-btn:hover,
-#update-contractor-btn:focus {
+  #update-contractor-btn:focus {
   color: #FEFFFF;
   transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
 }
@@ -186,7 +186,6 @@ a:focus {
     left: 10px;
     top: 145px;
 }
-
 
 .column-3 {
   float: left;
@@ -254,7 +253,6 @@ select:focus {
 
   .tooltip {
     position: relative;
-
   }
   
   .tooltip .tooltiptext {

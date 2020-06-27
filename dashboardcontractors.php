@@ -30,7 +30,6 @@
 </form>
    <div class="property-name">
     <?php
-
 $sql = "SELECT contractor_name FROM contractors WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT $contractorChosen;";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
@@ -44,7 +43,7 @@ echo $row['contractor_name'];
     <h3 class="heading"><a href="#" data-target="deletecontractor" class="nav-link">Delete Contractor</a></h3>
 
     
-<br><br><br>
+<br>
         <p class="contractor-types">Contractor Name: <span style="color:#F64C72"><?php
 $sql = "SELECT contractor_name FROM contractors WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT $contractorChosen;";
 $result = mysqli_query($conn, $sql);

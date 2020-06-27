@@ -1,5 +1,6 @@
 <?php
-session_start();
+session_start(); 
+include_once 'includes/dbh.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -28,26 +29,31 @@ session_start();
 <form class="form-login" action="includes/login.inc.php" method="post">
     <input type="text" class="email-styling" name="mailuid" placeholder="Email Address" autocomplete="off">
     <input type="password" class="password-styling" name="pwd" placeholder="Password">
-    <button type="submit" name="login-submit">Log In</button><br>
-<h2 id="link-sent"><?php 
+    <button type="submit" name="login-submit">Log In</button>
+<h2 id="verified-confirmed"><?php 
 
-if(isset($_GET['vkey'])) {
+$vkey = $_SESSION['vkey2'];
+$verified = "1";
 
-    require 'dbh.inc.php';
+    if (isset($_GET['vkey'])) {
+        if ($_GET['vkey'] == $vkey) {
 
-    $resultSet = $sql = "SELECT verified, vkey FROM customer_details WHERE verified = 0 AND vkey = '$vkey' 
-    LIMIT 1;";
-    echo "Test";
-    if (mysqli_num_rows($resultSet) == 1) {
-        $update = $sql = "UPDATE customer_details SET verified = 1 WHERE vkey = '$vkey' LIMIT 1;";
-        if ($update) {
+        $sql = "UPDATE customer_details SET verified = '$verified' WHERE vkey = '$vkey';";
+
+        if (mysqli_query($conn, $sql)) {
             echo "Thank you for verifying your account. You can now log in.";
-    } else {
-        echo "This account is invalid or has already been verified.";
-    }
+          } else {
+            echo "This account is invalid or has already been verified.";
+          }
+          
+          mysqli_close($conn);
 }
-}?></h2>
+    }
 
+?></h2>
+
+</form>
 
 </main>
 </div>
+</html>

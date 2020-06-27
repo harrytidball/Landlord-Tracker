@@ -113,8 +113,15 @@ button[type=submit] {
 #link-sent {
     font-weight: 100;
     text-align: center;
-    font-size: 30px;
-    padding: 20px;
+    font-size: 25px;
+    padding: 60px;
+}
+
+#verified-confirmed {
+    font-weight: 100;
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
 }
 
 #reset-request-submit {

@@ -38,7 +38,6 @@ mysqli_stmt_close($stmt);
 mysqli_close($conn);
 
 $to = $userEmail;
-
 $subject = 'Reset your password for Landlord Tracker';
 $message = '<p>We received a password reset request. The link to reset your password is below. If you did
 not make this request, you can ignore this email.</p>';
