@@ -34,6 +34,7 @@ session_start();
     Forgot Password?</a><br><br>
     <a href="signup.php" id="sign-up-log-in"><span style="color:#242582">...................
     .........</span>Sign Up</a>
+
     </form>
 
     <?php

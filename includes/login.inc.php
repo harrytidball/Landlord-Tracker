@@ -11,17 +11,18 @@ require 'dbh.inc.php';
 $mailuid = $_POST['mailuid'];  
 $password = $_POST['pwd']; 
 
-//$sql = "SELECT verified FROM customer_details WHERE user_email=?;";
-//$stmt = mysqli_stmt_init($conn);
-//mysqli_stmt_bind_param($stmt, "s", $mailuid);
-//mysqli_stmt_execute($stmt);
-//mysqli_stmt_bind_result($stmt, $verified);
-
-//OPEN TO SQL INJECTION - REPLACE WITH PREPARED STATEMENT
-$sql = "SELECT verified FROM customer_details WHERE user_email='$mailuid';";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_array($result);
-$verified = $row['verified'];  
+$sql = "SELECT verified FROM customer_details WHERE user_email=?;";
+$stmt = mysqli_stmt_init($conn);
+if (!mysqli_stmt_prepare($stmt, $sql)) {
+    echo "SQL statement failed.";
+} else {
+    mysqli_stmt_bind_param($stmt, "s", $mailuid);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $verified = $row['verified'];
+    }
+}
 
 if (empty($mailuid) || empty($password)) {
     header("Location: ../login.php?error=emptyfields");
@@ -45,9 +46,9 @@ if (empty($mailuid) || empty($password)) {
             if ($pwdCheck == false) {
                 header("Location: ../login.php?error=wrongpwd");
                 exit(); 
-            } else if ($verified !== "1") {
+            } else if ($verified !== 1) {
                 header("Location: ../login.php?error=notverified");
-                exit(); 
+                exit();
             } else if ($pwdCheck == true) {
                 session_start();
                 $_SESSION['userId'] = $row['id'];
