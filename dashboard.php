@@ -162,7 +162,7 @@
         if ($amountOfProperties > 9) {
             echo "Add New Property <br> (You have reached the maximum of 10)";
         } 
-        ?></a>
+        ?></li>
 
             </div>
 
@@ -404,6 +404,8 @@
                         name="contractor-role" placeholder="e.g. Working on Broken Boiler" autocomplete="off"></h1>
 
                         <button type="submit" name="add-submit" id="btn-create-two">Create</button>
+                                             
+                    </form> 
                     </div>
 
         <div class="page" id="addnewpropertyone">
@@ -548,8 +550,6 @@
                             <button type="submit" name="add-submit" id="btn-create">Create</button>
 
                     </form>
-                     
-                    </form> 
 
                     </div>
                   </div>
