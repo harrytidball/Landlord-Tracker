@@ -129,7 +129,7 @@ echo $row['contractor_name'];
                         } else {
                             echo $row['contractor_contact_no'];
                         } 
-            ?>" autocomplete="off"></h1>
+            ?>" autocomplete="new-password"></h1>
                         <br><br><br><br>
                         <h1 class="contractor-detail-new">Email:   <input type="email"
                         name="contractor-email" placeholder="<?php
@@ -141,7 +141,7 @@ echo $row['contractor_name'];
                         } else {
                             echo $row['contractor_email'];
                         }
-            ?>" autocomplete="off"></h1>
+            ?>" autocomplete="new-password"></h1>
                         <br><br><br><br>
                         <h1 class="contractor-detail-new">Job Description:   <input type="text" 
                         name="contractor-job-desc" placeholder="<?php

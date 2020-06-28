@@ -254,7 +254,7 @@ echo $row['address_line_one'];
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_array($result);
             echo $row['address_line_one'];  
-                        ?>" autocomplete="off"><br><input type="text"
+                        ?>" autocomplete="new-password"><br><input type="text"
                         name="address-line-two" placeholder="<?php
                                                                $sql = "SELECT address_line_two FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                                                                $result = mysqli_query($conn, $sql);    
@@ -267,7 +267,7 @@ echo $row['address_line_one'];
                                                                         }
 
                                                                 
-                        ?>" autocomplete="off"><br><input type="text"
+                        ?>" autocomplete="new-password"><br><input type="text"
                         name="address-line-three" placeholder="<?php
                                                     $sql = "SELECT address_line_three FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                                                     $result = mysqli_query($conn, $sql);    
@@ -278,7 +278,7 @@ echo $row['address_line_one'];
                                                              } else {
                                                                  echo "Address Line Three (Optional)";
                                                              }
-                        ?>" autocomplete="off"><input type="text"
+                        ?>" autocomplete="new-password"><input type="text"
                         name="city-county" placeholder="<?php
               $sql = "SELECT city_county FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
               $result = mysqli_query($conn, $sql);
@@ -288,7 +288,7 @@ echo $row['address_line_one'];
               } else {
                   echo "City/County";
               }
-                        ?>" autocomplete="off"><br><input type="text"
+                        ?>" autocomplete="new-password"><br><input type="text"
                         name="post-code" placeholder="<?php
             $sql = "SELECT post_code FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
             $result = mysqli_query($conn, $sql);
@@ -359,7 +359,7 @@ echo $row['address_line_one'];
                                 } else {
                                     echo "Enter Number";
                                 }
-                        ?>" autocomplete="off"></h1>
+                        ?>" autocomplete="new-password"></h1>
                     <h1 class="rent-tenant-detail-new">Tenant Email:   <input type="email"
                         name="tenant-email" placeholder="<?php
                   $sql = "SELECT tenant_email FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
@@ -370,7 +370,7 @@ echo $row['address_line_one'];
                     } else {
                         echo "Enter Email";
                     }
-                        ?>" autocomplete="off"></h1>
+                        ?>" autocomplete="new-password"></h1>
 
 
 
@@ -937,7 +937,7 @@ echo $row['address_line_one'];
                         $yearlyCosts = (($mortgagePayment + $agencyMonthly + $householdBills + $landlordInsurance) * 12);
                         $yearlyProfit = $yearlyRent - $yearlyCosts;
                         $cashInvested = $deposit + $agencyUpfront + $stampDuty + $solicitorsFees + $repairs + $misc;
-
+                        $ROI = 0;
                         if ($yearlyProfit > 0 && $cashInvested > 0) {
                         $ROI = ($yearlyProfit / $cashInvested) * 100;
                         echo (int)$ROI;

@@ -392,10 +392,10 @@
                         <h1 class="contractor-detail-new">Contact Number:   <input type="tel"
                     onkeydown="javascript: return event.keyCode === 8 ||
                     event.keyCode === 46 || event.keyCode === 9 ? true : !isNaN(Number(event.key))"
-                        name="contractor-no" placeholder="Enter Number" autocomplete="off"></h1>
+                        name="contractor-no" placeholder="Enter Number" autocomplete="new-password"></h1>
                         <br><br><br><br>
                         <h1 class="contractor-detail-new">Email:   <input type="email"
-                        name="contractor-email" placeholder="Enter Email" autocomplete="off"></h1>
+                        name="contractor-email" placeholder="Enter Email" autocomplete="new-password"></h1>
                         <br><br><br><br>
                         <h1 class="contractor-detail-new">Job Description:   <input type="text" 
                         name="contractor-job-desc" placeholder="e.g. Plumber" autocomplete="off"></h1>
@@ -425,7 +425,7 @@
                     <br><br>
                     <form action="includes/addproperty.inc.php" method="post" onkeypress="return event.keyCode != 13;">
                     <h1 class="property-detail-new">Property Deposit: £   <input type="number" onkeydown="javascript: return event.keyCode === 8 ||
-                        event.keyCode === 46 || event.keyCode === 9 ? true : !isNaN(Number(event.key))"
+                        event.keyCode === 46 || event.keyCode === 9 ? true : !isNaN(Number(event.key))" 
                         name="original-deposit" placeholder="Enter Deposit" autocomplete="off"></h1>
                         <h1 class="property-detail-new">Date of Purchase:   <input type="date"
                         name="purchase-date" placeholder="dd/mm/yyyy" autocomplete="off"></h1>
@@ -439,11 +439,11 @@
                         name="current-value" placeholder="Enter Value" autocomplete="off"></h1>
 
                     <h1 class="property-detail-new">Address:<br><input type="text"
-                        name="address-line-one" placeholder="Address Line One" autocomplete="off"><br><input type="text"
-                        name="address-line-two" placeholder="Address Line Two (Optional)" autocomplete="off"><br><input type="text"
-                        name="address-line-three" placeholder="Address Line Three (Optional)" autocomplete="off"><input type="text"
-                        name="city-county" placeholder="City/County" autocomplete="off"><br><input type="text"
-                        name="post-code" placeholder="Post Code" autocomplete="off"></h1>  
+                        name="address-line-one" placeholder="Address Line One" ><br><input type="text"
+                        name="address-line-two" placeholder="Address Line Two (Optional)" ><br><input type="text"
+                        name="address-line-three" placeholder="Address Line Three (Optional)" autocomplete="none"><input type="text"
+                        name="city-county" placeholder="City/County" autocomplete="none"><br><input type="text"
+                        name="post-code" placeholder="Post Code" autocomplete="none"></h1>  
                 </div>
                     <div class="column-add-property">
                         <br><br>
@@ -464,9 +464,9 @@
                     <h1 class="rent-tenant-detail-new">Tenant Contact Number:   <input type="tel"
                     onkeydown="javascript: return event.keyCode === 8 ||
                     event.keyCode === 46 || event.keyCode === 9 ? true : !isNaN(Number(event.key))"
-                        name="contact-no" placeholder="Enter Number" autocomplete="off"></h1>
+                        name="contact-no" placeholder="Enter Number" autocomplete="new-password"></h1>
                     <h1 class="rent-tenant-detail-new">Tenant Email:   <input type="email"
-                        name="tenant-email" placeholder="Enter Email" autocomplete="off"></h1>
+                        name="tenant-email" placeholder="Enter Email" autocomplete="new-password"></h1>
 
                         <div class="tooltipaddproperty">
                         <a href="#" data-target="addnewpropertytwo" 
