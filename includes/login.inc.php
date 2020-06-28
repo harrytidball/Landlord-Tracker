@@ -24,6 +24,22 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
     }
 }
 
+$sql = "SELECT user_email FROM customer_details WHERE user_email=?;";
+$stmt = mysqli_stmt_init($conn);
+if (!mysqli_stmt_prepare($stmt, $sql)) {
+    echo "SQL statement failed.";
+} else {
+    mysqli_stmt_bind_param($stmt, "s", $mailuid);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+    $resultCheck = mysqli_stmt_num_rows($stmt);
+    if ($resultCheck == 0) {
+        header("Location: ../login.php?error=invalidemail");
+        exit();
+    }
+}
+
+
 if (empty($mailuid) || empty($password)) {
     header("Location: ../login.php?error=emptyfields");
     exit();
