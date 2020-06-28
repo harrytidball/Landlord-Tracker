@@ -933,45 +933,16 @@ echo $row['address_line_one'];
 
             <div class="tooltip">
           <h1 class="profit-loss-detail">Return on Investment: <span style="color:#F64C72"><?php
-                $sql = "SELECT * FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
-                $result = mysqli_query($conn, $sql);
-                $resultCheck = mysqli_num_rows($result);
-
-                if ($resultCheck > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $yearsToMonths = 0;
-                        if ($years > 0) {
-                            $yearsToMonths = $years * 12;
-                        }
-                        if ($months > 0) {
-                            $repairsProRata = ((12 / $months + $yearsToMonths) * $repairs);
-                        } else if ($yearsToMonths > 0) {
-                            $repairsProRata = ((12 / $yearsToMonths) * $repairs);
-                        } else {
-                            $repairsProRata = $repairs;
-                        }
-                        if ($months > 0) {
-                            $miscProRata = ((12 / $months + $yearsToMonths) * $misc);
-                        } else if ($yearsToMonths > 0) {
-                            $miscProRata = ((12 / $yearsToMonths) * $misc);
-                        } else {
-                            $miscProRata = $misc;
-                        }
-
                         $yearlyRent = $rentAmount * (12 - $paymentsMissed);
-                        $yearlyCosts = (($mortgagePayment + $agencyMonthly + $householdBills + $landlordInsurance) * 12)
-                        + $repairsProRata + $miscProRata;
+                        $yearlyCosts = (($mortgagePayment + $agencyMonthly + $householdBills + $landlordInsurance) * 12);
                         $yearlyProfit = $yearlyRent - $yearlyCosts;
-                        $cashInvested = $deposit + $agencyUpfront + $stampDuty + $solicitorsFees;
+                        $cashInvested = $deposit + $agencyUpfront + $stampDuty + $solicitorsFees + $repairs + $misc;
 
                         if ($yearlyProfit > 0 && $cashInvested > 0) {
                         $ROI = ($yearlyProfit / $cashInvested) * 100;
                         echo (int)$ROI;
                         } 
-
-                    }
-                }
-
+               
             ?>%</span></h1>
              <span class="tooltiptext">The yearly ROI of the property. This takes into account all upfront expenses e.g. stamp duty
              and any other additional repair costs.</span></div>
@@ -1011,16 +982,18 @@ echo $row['address_line_one'];
 
             <h1 class="projected-detail">Projected Net Profit: </h1>
             <h1 class="projected-detail">1 Year: <span style="color:#F64C72">£<?php
-            echo number_format(($monthlyNet * 12) - $repairsProRata - $miscProRata);
+            $ROIpercentage = $ROI / 100;
+            $yearOne = bcmul($cashInvested, $ROIpercentage);
+            echo number_format($yearOne);
             ?></span></h1>
             <h1 class="projected-detail">5 Years: <span style="color:#F64C72">£<?php
-            echo number_format((($monthlyNet * 12) - $repairsProRata - $miscProRata) * 5);
+            echo number_format($yearOne * 5);
             ?></span></h1>
             <h1 class="projected-detail">10 Years: <span style="color:#F64C72">£<?php
-            echo number_format((($monthlyNet * 12) - $repairsProRata - $miscProRata) * 10);
+            echo number_format($yearOne * 10);
             ?></span></h1>
             <h1 class="projected-detail">25 Years: <span style="color:#F64C72">£<?php
-            echo number_format((($monthlyNet * 12) - $repairsProRata - $miscProRata) * 25);
+            echo number_format($yearOne * 25);
             ?></span></h1>
              <span class="tooltiptext">The anticipated net profit based on the current monthly profit and previous
              repair/miscellaneous costs.</span></div>
