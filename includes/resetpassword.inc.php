@@ -27,8 +27,9 @@ if (isset($_POST["reset-password-submit"])) {
     } else {
     
     $currentDate = date("U");
+    $token = $_SESSION["token"];
 
-    $sql = "SELECT * FROM pwdreset WHERE pwdResetSelector=? AND pwdResetExpires >= ?;";
+    /*$sql = "SELECT * FROM pwdreset WHERE pwdResetSelector=? AND pwdResetExpires >= ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("Location: ../forgotpassword.php?error=sqlerror");
@@ -40,10 +41,19 @@ if (isset($_POST["reset-password-submit"])) {
     if (!$row = mysqli_fetch_assoc($result)) {
         header("Location: ../forgotpassword.php?error=resubmit");
         exit();
-    } else {
+    } else { */
+
+        $sql = "SELECT pwdResetToken FROM pwdreset WHERE pwdResetId = '18';";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
+        $resetToken = $row['pwdResetToken'];  
+
+        if (isset($_GET['validator'])) {
+            if ($_GET['validator'] == $token) {
+            $tokenCheck = password_verify($token, $resetToken);
+            
+
         
-        
-    }
 
     /*$sql = "SELECT * FROM pwdreset WHERE pwdResetSelector=? AND pwdResetExpires >= ?;";
     $stmt = mysqli_stmt_init($conn);
@@ -60,7 +70,7 @@ if (isset($_POST["reset-password-submit"])) {
     } else {
         $tokenBin = hex2bin($validator);
         $tokenCheck = password_verify($tokenBin, $row["pwdResetToken"]);
-    
+        */
         if ($tokenCheck === false) {
             header("Location: ../forgotpassword.php?error=resubmit");
             exit();
@@ -88,7 +98,7 @@ if (isset($_POST["reset-password-submit"])) {
                         $newPwdHash = password_hash($password, PASSWORD_DEFAULT);
                         mysqli_stmt_bind_param($stmt, "ss", $newPwdHash, $tokenEmail);
                         mysqli_stmt_execute($stmt);
-                        */
+                    
                         
     $sql = "DELETE FROM pwdreset WHERE pwdResetEmail=?;";
     $stmt = mysqli_stmt_init($conn);
@@ -102,13 +112,17 @@ if (isset($_POST["reset-password-submit"])) {
         header("Location: ../login.php?newpwd=passwordupdated");
         exit(); 
     }
-                   //}
-                //}
-            //}
-        //}
-    //}
+                   }
+                }
+            
+            }
+        }
+    }
 }
 }
+//}
+//}
 } else {
-    header("Location: ../index.php");
+    header("Location: ../login.php");
+    exit(); 
 }

@@ -23,20 +23,16 @@
                                <h3><i class="fa fa-lock fa-4x"></i></h3>
                                <h2 class="text-center">Forgot Password</h2>
                               <?php
-                               $token = random_bytes(32);
-                              echo bin2hex($token);
-                              echo "...";
-                              $selector = bin2hex(random_bytes(8));
-                              echo $selector;
 
-                               ?>
+
+                              ?>
                                <div class="panel-body">
                  
                                    <div class="form-group">
                                      <div class="input-group">
                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
                                        <form action="includes/resetrequest.inc.php" method="post">
-                                       <input type="email" name="email" placeholder="Email Address" class="form-control">
+                                       <input type="email" name="email" placeholder="Email Address" class="form-control" autocomplete="new-password">
                                        <button type="submit" name="reset-request-submit" id="reset-request-submit">Reset Password</button>
                                       </form>
                                       <br>
@@ -60,6 +56,8 @@
                                         ?><script>alert('SQL error.');</script><?php
                                       } else if ($_GET["error"] == "resubmit") {
                                         ?><script>alert('There was an error, please request a new verification link.');</script><?php
+                                    }  else if ($_GET['error'] == "invalidemail") {
+                                      ?><script>alert('Email address is not currently registered.');</script><?php
                                     }
                                   }
                                     ?>
@@ -70,8 +68,8 @@
                                      
                       
                                    </div>
-                                   
-                                   <input type="hidden" class="hide" name="token" id="token" value=""> 
+      
+      
                             
                  
                                </div>

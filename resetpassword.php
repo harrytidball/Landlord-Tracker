@@ -40,7 +40,6 @@
                                       if (empty($selector) || empty($validator)) {
                                         echo "Your request could not be validated.";
                                       } else {
-                                        //if (ctype_xdigit($selector) !== false && ctype_xdigit($validator) !== false) {
                                           ?>
                                         <form action="includes/resetpassword.inc.php" method="post">
                                         <input name="selector" type="hidden" value="<?php echo $selector; ?>">
@@ -50,8 +49,8 @@
                                         <button type="submit" name="reset-password-submit" id="reset-request-submit">Reset</button>
                                         </form>
                                           <?php
-                                        //}
-                                      }
+                                        }
+                                      
 
                                       ?>
 

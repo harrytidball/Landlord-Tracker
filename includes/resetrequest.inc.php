@@ -2,15 +2,32 @@
 
 if (isset($_POST["reset-request-submit"])) {
 
-    $token = bin2hex(random_bytes(32));
-
-    $url = "www.landlordtracker.co.uk/resetpassword.php?selector=" . $selector . "&validator=" . $token;
-
-    $expires = date("U") + 1800;
-
     require 'dbh.inc.php';
 
     $userEmail = $_POST["email"];
+
+    $sql = "SELECT user_email FROM customer_details WHERE user_email=?;";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "SQL statement failed.";
+    } else {
+        mysqli_stmt_bind_param($stmt, "s", $userEmail);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_store_result($stmt);
+        $resultCheck = mysqli_stmt_num_rows($stmt);
+        if ($resultCheck == 0) {
+            header("Location: ../forgotpassword.php?error=invalidemail");
+            exit();
+        }
+    }
+
+    $selector = bin2hex(random_bytes(8));
+    $token = bin2hex(random_bytes(32));
+
+    $_SESSION["token"] = $token;
+    $url = "www.landlordtracker.co.uk/resetpassword.php?selector=" . $selector . "&validator=" . $token;
+
+    $expires = date("U") + 1800;
 
     $sql = "DELETE FROM pwdreset WHERE pwdResetEmail=?;";
     $stmt = mysqli_stmt_init($conn);
