@@ -21,9 +21,9 @@
                          <div class="panel panel-default">
                            <div class="panel-body">
                              <div class="text-center">
-                               <h3><i class="fa fa-lock fa-4x"></i></h3>
+                    
                                <h2 class="text-center">Reset Password</h2>
-                           
+                              <br>
                                <div class="panel-body">
                  
                                  <form id="register-form" role="form" autocomplete="off" class="form" method="post">
@@ -40,19 +40,21 @@
                                       if (empty($selector) || empty($validator)) {
                                         echo "Your request could not be validated.";
                                       } else {
-                                        if (ctype_xdigit($selector) !== false && ctype_xdigit($validator) !== false) {
+                                        //if (ctype_xdigit($selector) !== false && ctype_xdigit($validator) !== false) {
                                           ?>
                                         <form action="includes/resetpassword.inc.php" method="post">
                                         <input name="selector" type="hidden" value="<?php echo $selector; ?>">
-                                        <input name="validator" type="hidden" value="<?php echo $selector; ?>">
+                                        <input name="validator" type="hidden" value="<?php echo $validator; ?>">
                                         <input type="password" class="newpass" name="pwd" placeholder="Enter New Password">
                                         <input type="password" class="newpass" name="pwd-repeat" placeholder="Repeat New Password">
-                                        <button type="submit" class="reset-new" name="reset-password-submit">Reset</button>
+                                        <button type="submit" name="reset-password-submit" id="reset-request-submit">Reset</button>
                                         </form>
                                           <?php
-                                        }
+                                        //}
                                       }
+
                                       ?>
+
 
                                       
                                      </div>

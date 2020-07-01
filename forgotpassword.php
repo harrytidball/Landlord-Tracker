@@ -22,25 +22,46 @@
                              <div class="text-center">
                                <h3><i class="fa fa-lock fa-4x"></i></h3>
                                <h2 class="text-center">Forgot Password</h2>
-                           
+                              <?php
+                               $token = random_bytes(32);
+                              echo bin2hex($token);
+                              echo "...";
+                              $selector = bin2hex(random_bytes(8));
+                              echo $selector;
+
+                               ?>
                                <div class="panel-body">
-                 
-                                 <form id="register-form" role="form" autocomplete="off" class="form" method="post">
                  
                                    <div class="form-group">
                                      <div class="input-group">
                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
                                        <form action="includes/resetrequest.inc.php" method="post">
-                                       <input name="email" placeholder="Email Address" class="form-control"  type="email">
+                                       <input type="email" name="email" placeholder="Email Address" class="form-control">
                                        <button type="submit" name="reset-request-submit" id="reset-request-submit">Reset Password</button>
                                       </form>
+                                      <br>
                                     <?php
                                     if (isset($_GET["reset"])) {
                                       if ($_GET["reset"] == "success") {
                                         echo '<p class="signupsuccess">Please check your email for a reset link.</p>';
                                       }
+                                    } else if (isset($_GET["newpwd"])) {
+                                      if ($_GET["newpwd"] == "empty") {
+                                        ?><script>alert('Please fill in all fields.');</script><?php
+                                      } else if ($_GET["newpwd"] == "notsame") {
+                                        ?><script>alert('Passwords do not match. Please try again.');</script><?php
+                                      } else if ($_GET["newpwd"] == "passwordlength") {
+                                        ?><script>alert('Password too short. Password needs to be at least 6 characters long.');</script><?php
+                                      } else if ($_GET["newpwd"] == "notnumeric") {
+                                        ?><script>alert('Please include both letters and numbers in your password.');</script><?php
+                                      }
+                                    } else if (isset($_GET["error"])) {
+                                      if ($_GET["error"] == "sqlerror") {
+                                        ?><script>alert('SQL error.');</script><?php
+                                      } else if ($_GET["error"] == "resubmit") {
+                                        ?><script>alert('There was an error, please request a new verification link.');</script><?php
                                     }
-
+                                  }
                                     ?>
 
                                      </div>
@@ -51,7 +72,7 @@
                                    </div>
                                    
                                    <input type="hidden" class="hide" name="token" id="token" value=""> 
-                                 </form>
+                            
                  
                                </div>
                              </div>

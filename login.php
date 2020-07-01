@@ -50,7 +50,7 @@ session_start();
     <?php
     if (isset($_SESSION['userId'])) {
         header("Location: ../dashboard.php");
-        exit;
+        exit();
     }
     if (isset($_GET['error'])) {
         if ($_GET['error'] == "emptyfields") {

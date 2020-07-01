@@ -478,6 +478,7 @@
                 </div>
         </div>
 
+
         <div class="page" id="addnewpropertytwo">
             <div class="header">
                 <h1 class="dashboard-title">Dash<span style="color:#F64C72">board</span></h1>

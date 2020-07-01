@@ -45,10 +45,8 @@
               }
               else if ($_GET['error'] == "notnumeric") {
                 ?><script>alert('Please include both letters and numbers in your password.');</script><?php
-
               }
             }
-
             ?>
          
                       
