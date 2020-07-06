@@ -2,8 +2,8 @@
   background-color: #242582;
   width: 500px;
   height: 650px;
-  margin: 9em auto;
-  border-radius: 1.5em;
+  margin: 8em auto;
+  border-radius: 3em;
   position: fixed;
   left: 470px;
   top: 10px;
@@ -21,12 +21,12 @@
 
 
   .pricing-features {
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
     font-weight: 300;
     font-size: 28px;
     color: #FEFFFF;
     text-align: center;
-    padding: 2px;
+    padding: 10px;
   }
 
 

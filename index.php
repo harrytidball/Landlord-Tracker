@@ -9,13 +9,11 @@
       <body style="background-color:#F3F1FF;"></body>
         <div class="header-log-out">
        
-        <h1 class="dashboard-title">Landlord<span style="color:#F64C72">Tracker</span></h1>
+        <h1 class="dashboard-title"><a href="index.php">Landlord<span style="color:#F64C72">Tracker</span></a></h1>
 
         <a href="blog.php" id="blog-link">Blog</a>
 
       <a href="login.php" id="log-in-link">Log In</a>
-
-      <a href="pricing.php" id="pricing-link">Pricing</a>
 
       <a href="features.php" id="features-link">Features</a>
 

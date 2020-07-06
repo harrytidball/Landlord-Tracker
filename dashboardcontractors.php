@@ -110,7 +110,7 @@ echo $row['contractor_name'];
                         $sql = "SELECT contractor_name FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT $contractorChosen;";
                         $result = mysqli_query($conn, $sql);
                         $row = mysqli_fetch_array($result);
-                        if ($row['contractor_name'] == NULL || $row['contractor_name'] == 0) {
+                        if ($row['contractor_name'] == NULL) {
                             echo "Enter Name";
                         } else {
                             echo $row['contractor_name'];
@@ -136,7 +136,7 @@ echo $row['contractor_name'];
                         $sql = "SELECT contractor_email FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT $contractorChosen;";
                         $result = mysqli_query($conn, $sql);
                         $row = mysqli_fetch_array($result);
-                        if ($row['contractor_email'] == NULL || $row['contractor_email'] == 0) {
+                        if ($row['contractor_email'] == NULL) {
                             echo "Enter Email";
                         } else {
                             echo $row['contractor_email'];
@@ -148,7 +148,7 @@ echo $row['contractor_name'];
                         $sql = "SELECT contractor_job_desc FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT $contractorChosen;";
                         $result = mysqli_query($conn, $sql);
                         $row = mysqli_fetch_array($result);
-                        if ($row['contractor_job_desc'] == NULL || $row['contractor_job_desc'] == 0) {
+                        if ($row['contractor_job_desc'] == NULL) {
                             echo "e.g. Plumber";
                         } else {
                             echo $row['contractor_job_desc'];
@@ -160,7 +160,7 @@ echo $row['contractor_name'];
                         $sql = "SELECT contractor_role FROM contractors WHERE id = '" . $_SESSION['userId'] . "' ORDER BY contractor_id DESC LIMIT $contractorChosen;";
                         $result = mysqli_query($conn, $sql);
                         $row = mysqli_fetch_array($result);
-                        if ($row['contractor_role'] == NULL || $row['contractor_role'] == 0) {
+                        if ($row['contractor_role'] == NULL) {
                             echo "e.g. Working on Broken Boiler";
                         } else {
                             echo $row['contractor_role'];
