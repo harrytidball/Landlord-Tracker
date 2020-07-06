@@ -51,14 +51,16 @@ if (isset($_GET["newpwd"])) {
 
                                       $selector = $_GET['selector'];
                                       $validator = $_GET['validator'];
-                                      $_SESSION["selector"] = $selector;
-                                      $_SESSION["validator"] = $validator;
+                                      //$_SESSION["selector"] = $selector;
+                                      //$_SESSION["validator"] = $validator;
 
                                       if (empty($selector) || empty($validator)) {
                                         echo "Your request could not be validated.";
                                       } else {
                                           ?>
                                         <form action="includes/resetpassword.inc.php" method="post">
+                                        <input type="hidden" name="selector" value="<?php echo $selector; ?>">
+                                        <input type="hidden" name="validator" value="<?php echo $validator; ?>">
                                         <input type="password" class="newpass" name="pwd" placeholder="Enter New Password">
                                         <input type="password" class="newpass" name="pwd-repeat" placeholder="Repeat New Password">
                                         <button type="submit" name="reset-password-submit" id="reset-request-submit">Reset</button>

@@ -45,8 +45,8 @@ if (isset($_POST["reset-request-submit"])) {
         echo "There was an insertion error.";
         exit();
     } else {
-        //$hashedToken = password_hash($token, PASSWORD_DEFAULT);
-        mysqli_stmt_bind_param($stmt, "ssss", $userEmail, $selector, $token, $expires);
+        $hashedToken = password_hash($token, PASSWORD_DEFAULT);
+        mysqli_stmt_bind_param($stmt, "ssss", $userEmail, $selector, $hashedToken, $expires);
         mysqli_stmt_execute($stmt); 
     }
 
@@ -56,7 +56,7 @@ mysqli_close($conn);
 $to = $userEmail;
 $subject = "Reset your password for Landlord Tracker";
 $message = "We received a password reset request. If you did
-not make this request, you can ignore this email. Here is your password reset link: 
+not make this request, you can ignore this email. This link will be valid for 30 minutes. Here is your password reset link: 
 <a href=$url>Reset Password</a>";
 
 $headers = "From: Landlord Tracker <support@landlordtracker.co.uk>\r\n";

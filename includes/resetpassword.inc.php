@@ -4,8 +4,8 @@ include_once 'dbh.inc.php';
 
 if (isset($_POST['reset-password-submit'])) {
  
-    $selector = $_SESSION["selector"];
-    $validator = $_SESSION["validator"];
+    $selector = $_POST["selector"];
+    $validator = $_POST["validator"];
     $password = $_POST['pwd'];
     $passwordRepeat = $_POST['pwd-repeat'];
 
@@ -62,18 +62,19 @@ if (isset($_POST['reset-password-submit'])) {
         echo "SQL error.";
     } else {
         mysqli_stmt_bind_param($stmt, "ss", $selector, $currentDate);
-        mysqli_stmt_execute($stmt); 
+        mysqli_stmt_execute($stmt);     
         $result = mysqli_stmt_get_result($stmt);
         while ($row = mysqli_fetch_assoc($result)) {
             $tokenEmail = $row['pwdResetEmail'];
         }
     }
     
-
-    if ($validator !== $token) {
-       header("Location: ../forgotpassword.php?error=resubmit");
+    //$tokenBin = hex2bin($validator);
+    $tokenCheck = password_verify($validator, $token);
+    if ($tokenCheck === false) {
+       header("Location: ../forgotpassword.php?error=invalidemail");
         exit();
-    } else {
+    } else if ($tokenCheck === true) {
         $sql = "UPDATE customer_details SET user_password=? WHERE user_email=?;";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
