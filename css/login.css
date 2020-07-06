@@ -117,6 +117,13 @@ button[type=submit] {
     padding: 60px;
 }
 
+#change-pwd-success {
+    font-weight: 100;
+    text-align: center;
+    font-size: 25px;
+    padding: 40px;
+}
+
 #verified-confirmed {
     font-weight: 100;
     text-align: center;

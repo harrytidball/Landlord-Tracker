@@ -41,16 +41,6 @@
                                       if ($_GET["reset"] == "success") {
                                         echo '<p class="signupsuccess">Please check your email for a reset link.</p>';
                                       }
-                                    } else if (isset($_GET["newpwd"])) {
-                                      if ($_GET["newpwd"] == "empty") {
-                                        ?><script>alert('Please fill in all fields.');</script><?php
-                                      } else if ($_GET["newpwd"] == "notsame") {
-                                        ?><script>alert('Passwords do not match. Please try again.');</script><?php
-                                      } else if ($_GET["newpwd"] == "passwordlength") {
-                                        ?><script>alert('Password too short. Password needs to be at least 6 characters long.');</script><?php
-                                      } else if ($_GET["newpwd"] == "notnumeric") {
-                                        ?><script>alert('Please include both letters and numbers in your password.');</script><?php
-                                      }
                                     } else if (isset($_GET["error"])) {
                                       if ($_GET["error"] == "sqlerror") {
                                         ?><script>alert('SQL error.');</script><?php

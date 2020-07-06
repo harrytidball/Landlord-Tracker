@@ -10,19 +10,19 @@ if (isset($_POST['reset-password-submit'])) {
     $passwordRepeat = $_POST['pwd-repeat'];
 
     if (empty($password) || empty($passwordRepeat)) {
-        header("Location: ../resetpassword.php?selector=" . $selector . "&validator=" . $token . "&newpwd=empty");
+        header("Location: ../resetpassword.php?selector=" . $selector . "&validator=" . $validator . "&newpwd=empty");
         exit();
     } else if ($password !== $passwordRepeat) {
-        header("Location: ../forgotpassword.php?newpwd=pwdnotsame");
+        header("Location: ../resetpassword.php?selector=" . $selector . "&validator=" . $validator . "&newpwd=pwdnotsame");
         exit();
     } else if (strlen($password) < 6) {
-        header("Location: ../forgotpassword.php?newpwd=passwordlength");
+        header("Location: ../resetpassword.php?selector=" . $selector . "&validator=" . $validator . "&newpwd=passwordlength");
         exit();
     } else if (!preg_match('~[0-9]+~', $password)) {
-        header("Location: ../forgotpassword.php?newpwd=notnumeric");
+        header("Location: ../resetpassword.php?selector=" . $selector . "&validator=" . $validator . "&newpwd=notnumeric");
         exit();
     } else if (ctype_digit($password) == true) {
-        header("Location: ../forgotpassword.php?newpwd=notnumeric");
+        header("Location: ../resetpassword.php?selector=" . $selector . "&validator=" . $validator . "&newpwd=notnumeric");
         exit();
     } else {
 

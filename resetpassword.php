@@ -37,6 +37,18 @@ session_start();
 
                                       <?php
 
+if (isset($_GET["newpwd"])) {
+  if ($_GET["newpwd"] == "empty") {
+    ?><script>alert('Please fill in all fields.');</script><?php
+  } else if ($_GET["newpwd"] == "notsame") {
+    ?><script>alert('Passwords do not match. Please try again.');</script><?php
+  } else if ($_GET["newpwd"] == "passwordlength") {
+    ?><script>alert('Password too short. Password needs to be at least 6 characters long.');</script><?php
+  } else if ($_GET["newpwd"] == "notnumeric") {
+    ?><script>alert('Please include both letters and numbers in your password.');</script><?php
+  }
+} 
+
                                       $selector = $_GET['selector'];
                                       $validator = $_GET['validator'];
                                       $_SESSION["selector"] = $selector;

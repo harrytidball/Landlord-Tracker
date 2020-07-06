@@ -34,16 +34,14 @@ session_start();
     Forgot Password?</a><br><br>
     <a href="signup.php" id="sign-up-log-in"><span style="color:#242582">...................
     .........</span>Sign Up</a>
-
     </form>
-
     <?php
     if (isset($_GET["success"])) {
         if ($_GET["success"] == "passwordupdated") {
-            echo '<p class="signupsuccess">Your password has been reset.</p>';  
+            echo '<h2 id="change-pwd-success">Your password has been reset.</h2>';  
+
         }
     }
-
     ?>
 
     <script>
