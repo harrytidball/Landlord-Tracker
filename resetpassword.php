@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <link href= "css\main.css" rel = "stylesheet" type = "text/css">
@@ -26,7 +30,6 @@
                               <br>
                                <div class="panel-body">
                  
-                                 <form id="register-form" role="form" autocomplete="off" class="form" method="post">
                  
                                    <div class="form-group">
                                      <div class="input-group">
@@ -34,16 +37,16 @@
 
                                       <?php
 
-                                      $selector = $_GET["selector"];
-                                      $validator = $_GET["validator"];
+                                      $selector = $_GET['selector'];
+                                      $validator = $_GET['validator'];
+                                      $_SESSION["selector"] = $selector;
+                                      $_SESSION["validator"] = $validator;
 
                                       if (empty($selector) || empty($validator)) {
                                         echo "Your request could not be validated.";
                                       } else {
                                           ?>
                                         <form action="includes/resetpassword.inc.php" method="post">
-                                        <input name="selector" type="hidden" value="<?php echo $selector; ?>">
-                                        <input name="validator" type="hidden" value="<?php echo $validator; ?>">
                                         <input type="password" class="newpass" name="pwd" placeholder="Enter New Password">
                                         <input type="password" class="newpass" name="pwd-repeat" placeholder="Repeat New Password">
                                         <button type="submit" name="reset-password-submit" id="reset-request-submit">Reset</button>
@@ -61,9 +64,7 @@
                                    <div class="form-group">
 
                                    </div>
-                                   
-                                   <input type="hidden" class="hide" name="token" id="token" value=""> 
-                                 </form>
+                                
                  
                                </div>
                              </div>

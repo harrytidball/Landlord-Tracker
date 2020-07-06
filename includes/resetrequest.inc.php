@@ -24,7 +24,7 @@ if (isset($_POST["reset-request-submit"])) {
     $selector = bin2hex(random_bytes(8));
     $token = bin2hex(random_bytes(32));
 
-    $_SESSION["token"] = $token;
+ 
     $url = "www.landlordtracker.co.uk/resetpassword.php?selector=" . $selector . "&validator=" . $token;
 
     $expires = date("U") + 1800;
@@ -45,8 +45,8 @@ if (isset($_POST["reset-request-submit"])) {
         echo "There was an insertion error.";
         exit();
     } else {
-        $hashedToken = password_hash($token, PASSWORD_DEFAULT);
-        mysqli_stmt_bind_param($stmt, "ssss", $userEmail, $selector, $hashedToken, $expires);
+        //$hashedToken = password_hash($token, PASSWORD_DEFAULT);
+        mysqli_stmt_bind_param($stmt, "ssss", $userEmail, $selector, $token, $expires);
         mysqli_stmt_execute($stmt); 
     }
 

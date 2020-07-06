@@ -38,8 +38,8 @@ session_start();
     </form>
 
     <?php
-    if (isset($_GET["newpwd"])) {
-        if ($_GET["newpwd"] == "passwordupdated") {
+    if (isset($_GET["success"])) {
+        if ($_GET["success"] == "passwordupdated") {
             echo '<p class="signupsuccess">Your password has been reset.</p>';  
         }
     }
