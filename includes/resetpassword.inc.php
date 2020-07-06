@@ -10,19 +10,19 @@ if (isset($_POST['reset-password-submit'])) {
     $passwordRepeat = $_POST['pwd-repeat'];
 
     if (empty($password) || empty($passwordRepeat)) {
-        header("Location: ../resetpassword.php?selector=" . $selector . "&validator=" . $validator . "&newpwd=empty");
+        header("Location: ../resetpassword?selector=" . $selector . "&validator=" . $validator . "&newpwd=empty");
         exit();
     } else if ($password !== $passwordRepeat) {
-        header("Location: ../resetpassword.php?selector=" . $selector . "&validator=" . $validator . "&newpwd=pwdnotsame");
+        header("Location: ../resetpassword?selector=" . $selector . "&validator=" . $validator . "&newpwd=pwdnotsame");
         exit();
     } else if (strlen($password) < 6) {
-        header("Location: ../resetpassword.php?selector=" . $selector . "&validator=" . $validator . "&newpwd=passwordlength");
+        header("Location: ../resetpassword?selector=" . $selector . "&validator=" . $validator . "&newpwd=passwordlength");
         exit();
     } else if (!preg_match('~[0-9]+~', $password)) {
-        header("Location: ../resetpassword.php?selector=" . $selector . "&validator=" . $validator . "&newpwd=notnumeric");
+        header("Location: ../resetpassword?selector=" . $selector . "&validator=" . $validator . "&newpwd=notnumeric");
         exit();
     } else if (ctype_digit($password) == true) {
-        header("Location: ../resetpassword.php?selector=" . $selector . "&validator=" . $validator . "&newpwd=notnumeric");
+        header("Location: ../resetpassword?selector=" . $selector . "&validator=" . $validator . "&newpwd=notnumeric");
         exit();
     } else {
 
@@ -38,7 +38,7 @@ if (isset($_POST['reset-password-submit'])) {
         mysqli_stmt_store_result($stmt);
         $resultCheck = mysqli_stmt_num_rows($stmt);
         if ($resultCheck == 0) {
-            header("Location: ../forgotpassword.php?error=resubmit");
+            header("Location: ../forgotpassword?error=resubmit");
             exit();
         }
     }
@@ -72,7 +72,7 @@ if (isset($_POST['reset-password-submit'])) {
     //$tokenBin = hex2bin($validator);
     $tokenCheck = password_verify($validator, $token);
     if ($tokenCheck === false) {
-       header("Location: ../forgotpassword.php?error=invalidemail");
+       header("Location: ../forgotpassword?error=invalidemail");
         exit();
     } else if ($tokenCheck === true) {
         $sql = "UPDATE customer_details SET user_password=? WHERE user_email=?;";
@@ -92,7 +92,7 @@ if (isset($_POST['reset-password-submit'])) {
                 mysqli_stmt_bind_param($stmt, "s", $tokenEmail);
                 mysqli_stmt_execute($stmt); 
                 session_start();
-                header("Location: ../login.php?success=passwordupdated");
+                header("Location: ../login?success=passwordupdated");
                 exit(); 
             }
             

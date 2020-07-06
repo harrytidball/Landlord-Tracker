@@ -1,7 +1,7 @@
 <?php
 
  $dbServerName = "localhost";
- $dbUsername = "root";
+ $dbUsername = "landlord_harrytidball";
  $dbPassword = "Suthampton735!";
  $dbName = "landlord_tracker";
  

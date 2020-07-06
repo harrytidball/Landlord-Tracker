@@ -173,6 +173,6 @@ mysqli_close($conn);
 }
 
 session_start();
-header("Location: ../dashboard.php");
+header("Location: ../dashboard");
 exit();
 

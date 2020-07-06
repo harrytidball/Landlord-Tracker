@@ -34,14 +34,14 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
     mysqli_stmt_store_result($stmt);
     $resultCheck = mysqli_stmt_num_rows($stmt);
     if ($resultCheck == 0) {
-        header("Location: ../login.php?error=invalidemail");
+        header("Location: ../login?error=invalidemail");
         exit();
     }
 }
 
 
 if (empty($mailuid) || empty($password)) {
-    header("Location: ../login.php?error=emptyfields");
+    header("Location: ../login?error=emptyfields");
     exit();
 } else {
     $sql = "SELECT * FROM customer_details WHERE user_email=?;"; // The question mark is a prepared statement which prevents
@@ -49,7 +49,7 @@ if (empty($mailuid) || empty($password)) {
     $stmt = mysqli_stmt_init($conn);
     // Check if user logged in correctly
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("Location: ../login.php?error=sqlerror");
+        header("Location: ../login?error=sqlerror");
         exit();
     } else {
         // Pass in parameters into database that the users provided
@@ -60,19 +60,19 @@ if (empty($mailuid) || empty($password)) {
             // Hashes the password to verify if it is correct, returns boolean
             $pwdCheck = password_verify($password, $row['user_password']);
             if ($pwdCheck == false) {
-                header("Location: ../login.php?error=wrongpwd");
+                header("Location: ../login?error=wrongpwd");
                 exit(); 
             } else if ($verified !== 1) {
-                header("Location: ../login.php?error=notverified");
+                header("Location: ../login?error=notverified");
                 exit();
             } else if ($pwdCheck == true) {
                 session_start();
                 $_SESSION['userId'] = $row['id'];
-                header("Location: ../dashboard.php");
+                header("Location: ../dashboard");
                 exit(); 
 
             } else {
-            header("Location: ../login.php?error=wrongpwd");
+            header("Location: ../login?error=wrongpwd");
             exit(); 
         }
     }

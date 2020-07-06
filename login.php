@@ -18,7 +18,7 @@ session_start();
 <body>
 
 <div class="main"><br><br>
-<a href="index.php" class="sign" align="center"><span style="color:#242582">...
+<a href="http://landlordtracker.co.uk" class="sign" align="center"><span style="color:#242582">...
 </span>Landlord<span style="color:#F64C72">Tracker</a></span>
 <br><br><br>
 
@@ -30,9 +30,9 @@ session_start();
     <input type="password" class="password-styling" name="pwd" placeholder="Password">
     <button type="submit" name="login-submit">Log In</button><br><br>
     
-    <a href="forgotpassword.php" id="forgot-pwd"><span style="color:#242582">..................</span>
+    <a href="forgotpassword" id="forgot-pwd"><span style="color:#242582">..................</span>
     Forgot Password?</a><br><br>
-    <a href="signup.php" id="sign-up-log-in"><span style="color:#242582">...................
+    <a href="signup" id="sign-up-log-in"><span style="color:#242582">...................
     .........</span>Sign Up</a>
     </form>
     <?php
@@ -47,7 +47,7 @@ session_start();
     <script>
     <?php
     if (isset($_SESSION['userId'])) {
-        header("Location: ../dashboard.php");
+        header("Location: ../dashboard");
         exit();
     }
     if (isset($_GET['error'])) {

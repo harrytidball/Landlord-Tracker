@@ -19,7 +19,7 @@ include_once 'includes/dbh.inc.php';
 <body>
 
 <div class="main"><br><br>
-<a href="index.php" class="sign" align="center"><span style="color:#242582">...
+<a href="http://landlordtracker.co.uk" class="sign" align="center"><span style="color:#242582">...
 </span>Landlord<span style="color:#F64C72">Tracker</a></span>
 <br><br><br>
 
@@ -34,7 +34,7 @@ if (isset($_GET['signup'])) {
                   $from = "support@landlordtracker.co.uk";
                   $subject = "Email Verification";
                   $message = "Please click this link to verify your account: 
-                      <a href='http://landlordtracker.co.uk/verify.php?vkey=$vkey'>Register Account</a>";
+                      <a href='http://landlordtracker.co.uk/verify?vkey=$vkey'>Register Account</a>";
                   $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
                   mail($to, $subject, $message, $headers);

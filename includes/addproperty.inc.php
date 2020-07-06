@@ -269,5 +269,5 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
 } 
 
 
-header("Location: ../dashboard.php");
+header("Location: ../dashboard");
 exit();

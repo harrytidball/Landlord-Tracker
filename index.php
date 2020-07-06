@@ -9,18 +9,18 @@
       <body style="background-color:#F3F1FF;"></body>
         <div class="header-log-out">
        
-        <h1 class="dashboard-title"><a href="index.php">Landlord<span style="color:#F64C72">Tracker</span></a></h1>
+        <h1 class="dashboard-title"><a href="http://landlordtracker.co.uk">Landlord<span style="color:#F64C72">Tracker</span></a></h1>
 
-        <a href="blog.php" id="blog-link">Blog</a>
+        <a href="blog" id="blog-link">Blog</a>
 
-      <a href="login.php" id="log-in-link">Log In</a>
+      <a href="login" id="log-in-link">Log In</a>
 
-      <a href="features.php" id="features-link">Features</a>
+      <a href="features" id="features-link">Features</a>
 
         </div>
 
         <div class="header-card">
-            <h1 id="sign-up-here"><a href="signup.php">Click <i><span style="font-weight: 400" >here</span></i> to sign up for 
+            <h1 id="sign-up-here"><a href="signup">Click <i><span style="font-weight: 400" >here</span></i> to sign up for 
               <span style="font-weight: 400">free</span>.</a></h1>
             <h1 class="no-credit-card"><span style="color:#F64C72">Start managing your properties more effectively <span style="font-weight: 400">now</span>!</span></h1>
         </div>

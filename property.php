@@ -1,6 +1,11 @@
 <?php
     session_start();
     include_once 'includes/dbh.inc.php';
+
+    if ((empty($_SESSION['userId']))) {
+        header('Location: http://landlordtracker.co.uk');
+        exit;
+       }
     $propertyChosen = $_POST['properties'];
 
     if ($propertyChosen == "1") {
@@ -45,8 +50,8 @@
         <main>
         <div class="page active" id="home">
             <div class="header">
-            <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+            <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 <div class="property-name">
                 <?php
@@ -65,7 +70,7 @@
 
                 </div>
         
-                <span style="font-size: 25px;"><a href="dashboard.php" id="go-back-link">Go Back</a></span>    
+                <span style="font-size: 25px;"><a href="dashboard" id="go-back-link">Go Back</a></span>    
 
                 <h3 class="heading"><a href="#" data-target="deleteproperty" class="nav-link">Delete Property</a></h3>
   
@@ -80,8 +85,8 @@
 
         <div class="page" id="deleteproperty">
         <div class="header">
-        <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+        <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 <div class="property-name">
                 <?php
@@ -198,8 +203,8 @@ echo $row['address_line_one'];
 
         <div class="page" id="updatedetails">
         <div class="header">
-        <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+        <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 <div class="property-name">
                 <?php
@@ -390,8 +395,8 @@ echo $row['address_line_one'];
 
             <div class="page" id="updatedetailstwo">
             <div class="header">
-            <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+            <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 <div class="property-name">
                 <?php
@@ -524,8 +529,8 @@ echo $row['address_line_one'];
 
         <div class="page" id="expenses">
             <div class="header">
-            <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+            <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 
         <form action="includes/logout.inc.php" method="post">
@@ -657,8 +662,8 @@ echo $row['address_line_one'];
 
         <div class="page" id="renttenantdetails">
             <div class="header">
-            <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+            <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 
         <form action="includes/logout.inc.php" method="post">
@@ -754,8 +759,8 @@ echo $row['address_line_one'];
 
         <div class="page" id="propertydetails">
             <div class="header">
-            <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+            <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 
         <form action="includes/logout.inc.php" method="post">
@@ -888,8 +893,8 @@ echo $row['address_line_one'];
 
         <div class="page" id="profitloss">
         <div class="header">
-       <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+       <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
             <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
             
         <form action="includes/logout.inc.php" method="post">

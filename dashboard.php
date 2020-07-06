@@ -1,6 +1,11 @@
 <?php
     session_start();
     include_once 'includes/dbh.inc.php';
+
+    if ((empty($_SESSION['userId']))) {
+        header('Location: http://landlordtracker.co.uk');
+        exit;
+       }
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +24,8 @@
         <div class="page active" id="home">
         
         <div class="header">
-        <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+        <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
         <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>  
 
 
@@ -45,7 +50,7 @@
 <div class="row-home">
   <div class="column-home">
     
-        <li class="home-menu"><form method="post" action="dashboardtwo.php">
+        <li class="home-menu"><form method="post" action="property">
             
             <select name="properties" onchange="this.form.submit();">
             <option value="">Select Property</option>
@@ -170,7 +175,7 @@
 
             <div class="column-home">
 
-            <li class="home-menu"><form method="post" action="dashboardcontractors.php">
+            <li class="home-menu"><form method="post" action="contractor">
 
 <select name="contractors" onchange="this.form.submit();">
 
@@ -378,8 +383,8 @@
 
 <div class="page" id="addcontractor">
             <div class="header">
-            <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+            <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 </div>
 
@@ -413,8 +418,8 @@
 
         <div class="page" id="addnewpropertyone">
             <div class="header">
-            <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+            <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 </div>
 
@@ -485,8 +490,8 @@
 
         <div class="page" id="addnewpropertytwo">
             <div class="header">
-            <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+            <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 </div>
         

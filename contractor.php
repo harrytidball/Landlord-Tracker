@@ -1,6 +1,11 @@
 <?php
     session_start();
     include_once 'includes/dbh.inc.php';
+
+    if ((empty($_SESSION['userId']))) {
+        header('Location: http://landlordtracker.co.uk');
+        exit;
+       }
     $contractorChosen = $_POST['contractors'];
 
     $_SESSION["contractors"] = $contractorChosen;
@@ -22,8 +27,8 @@
     <div class="page active" id="home">
 
     <div class="header">
-    <h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+    <h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
     <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
     
 <form action="includes/logout.inc.php" method="post">
@@ -39,7 +44,7 @@ echo $row['contractor_name'];
     </div>
     </div>
     
-    <span style="font-size: 25px;"><a href="dashboard.php" id="go-back-link">Go Back</a></span>      
+    <span style="font-size: 25px;"><a href="dashboard" id="go-back-link">Go Back</a></span>      
     
     <h3 class="heading"><a href="#" data-target="deletecontractor" class="nav-link">Delete Contractor</a></h3>
 
@@ -87,8 +92,8 @@ echo $row['contractor_role'];
 
 <div class="page" id="updatecontractor">
 <div class="header">
-<h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+<h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 <div class="property-name">
                 <?php
@@ -176,8 +181,8 @@ echo $row['contractor_name'];
 <div class="page" id="deletecontractor">
 
 <div class="header">
-<h1 class="dashboard-title"><a href="dashboard.php" 
-        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
+<h1 class="dashboard-title"><a href="dashboard" 
+        id="title-one">Dash</a><a href="dashboard"><span style="color:#F64C72">board</span></a></h1>
 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
 
 <form action="includes/logout.inc.php" method="post">

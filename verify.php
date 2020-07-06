@@ -19,7 +19,7 @@ include_once 'includes/dbh.inc.php';
 <body>
 
 <div class="main"><br><br>
-<a href="index.php" class="sign" align="center"><span style="color:#242582">...
+<a href="http://landlordtracker.co.uk" class="sign" align="center"><span style="color:#242582">...
 </span>Landlord<span style="color:#F64C72">Tracker</a></span>
 <br><br><br>
 

@@ -16,7 +16,7 @@ if (isset($_POST["reset-request-submit"])) {
         mysqli_stmt_store_result($stmt);
         $resultCheck = mysqli_stmt_num_rows($stmt);
         if ($resultCheck == 0) {
-            header("Location: ../forgotpassword.php?error=invalidemail");
+            header("Location: ../forgotpassword?error=invalidemail");
             exit();
         }
     }
@@ -25,7 +25,7 @@ if (isset($_POST["reset-request-submit"])) {
     $token = bin2hex(random_bytes(32));
 
  
-    $url = "www.landlordtracker.co.uk/resetpassword.php?selector=" . $selector . "&validator=" . $token;
+    $url = "www.landlordtracker.co.uk/resetpassword?selector=" . $selector . "&validator=" . $token;
 
     $expires = date("U") + 1800;
 
@@ -65,8 +65,8 @@ $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 mail($to, $subject, $message, $headers);
 
-header("Location: ../forgotpassword.php?reset=success");
+header("Location: ../forgotpassword?reset=success");
 
 } else {
-    header("Location ../index.php");
+    header("Location: http://landlordtracker.co.uk");
 }

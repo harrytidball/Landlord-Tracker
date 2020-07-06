@@ -76,6 +76,6 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
 }
     }
     session_start();
-    header("Location: ../dashboard.php");
+    header("Location: ../dashboard");
     exit();
 ?>
