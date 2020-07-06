@@ -2,7 +2,7 @@
 <html>
     <link href= "css\main.css" rel = "stylesheet">
     <head>
-    <title>Track Your BTL Income & Expenses</title>
+    <title>Track Your Buy To Let Income & Expenses</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
     </head>
     <body>
@@ -28,7 +28,7 @@
         <h1 class="logged-out-heading">Tailor made for <span style="color:#F64C72">UK landlords.</span></h1>
         <p class="logged-out-subheading">Effortlessly track your buy-to-let<br>portfolio's income and expenses.</p>
 
-        <img src="profit loss screenshot.png" style="width:647.4px;height:350px;right:5.5%;
+        <img src="profit loss screenshot new.png" style="width:647.4px;height:350px;right:5.5%;
         top:28%;">
 
         <h1 class="logged-out-heading2">Spreadsheet <span style="color:#F64C72">alternative.</span></h1>
@@ -37,12 +37,12 @@
         <h1 class="logged-out-heading3">Provides in-depth <span style="color:#F64C72">analysis.</span></h1>
         <p class="logged-out-subheading3">View your properties' return on<br>investment and projected profit/loss.</p>
 
-        <img src="property value screenshot.png" style="width:647.4px;height:350px;right:5.5%;top:110%;">
+        <img src="property details screenshot new.png" style="width:647.4px;height:350px;right:5.5%;top:110%;">
 
         <h1 class="logged-out-heading4">Offers you <span style="color:#F64C72">piece of mind.</span></h1>
-        <p class="logged-out-subheading4">Securely holds information for<br>up to ten different properties.</p>
+        <p class="logged-out-subheading4">Securely holds information on<br>your tenants and contractors.</p>
 
-        <img src="rent and tenant screenshot.png" style="width:647.4px;height:350px;right:5.5%;top:185%;">
+        <img src="rent and tenant screenshot new.png" style="width:647.4px;height:350px;right:5.5%;top:185%;">
 
         <h1 class="logged-out-heading5">This is invisible</h1>
         <p class="logged-out-subheading5">This is invisible</p>
