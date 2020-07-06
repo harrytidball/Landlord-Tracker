@@ -888,7 +888,7 @@ echo $row['address_line_one'];
 
         <div class="page" id="profitloss">
         <div class="header">
-        <h1 class="dashboard-title"><a href="dashboard.php" 
+       <h1 class="dashboard-title"><a href="dashboard.php" 
         id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
             <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
             
