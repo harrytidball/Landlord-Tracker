@@ -48,6 +48,11 @@ a:focus {
   transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
+#title-one:hover,
+#title-one:focus {
+  color: #FEFFFF;
+}
+
 #delete-link {
     font-size: 38px;
     border: none;

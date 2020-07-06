@@ -19,8 +19,10 @@
         <div class="page active" id="home">
         
         <div class="header">
-        <h1 class="dashboard-title">Dash<span style="color:#F64C72">board</span></h1>
+        <h1 class="dashboard-title"><a href="dashboard.php" 
+        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
         <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>  
+
 
         <form action="includes/logout.inc.php" method="post">
         <button type="submit" id="log-out-link">Log Out</button>
@@ -376,7 +378,8 @@
 
 <div class="page" id="addcontractor">
             <div class="header">
-                <h1 class="dashboard-title">Dash<span style="color:#F64C72">board</span></h1>
+            <h1 class="dashboard-title"><a href="dashboard.php" 
+        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 </div>
 
@@ -410,7 +413,8 @@
 
         <div class="page" id="addnewpropertyone">
             <div class="header">
-                <h1 class="dashboard-title">Dash<span style="color:#F64C72">board</span></h1>
+            <h1 class="dashboard-title"><a href="dashboard.php" 
+        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 </div>
 
@@ -481,7 +485,8 @@
 
         <div class="page" id="addnewpropertytwo">
             <div class="header">
-                <h1 class="dashboard-title">Dash<span style="color:#F64C72">board</span></h1>
+            <h1 class="dashboard-title"><a href="dashboard.php" 
+        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 </div>
         

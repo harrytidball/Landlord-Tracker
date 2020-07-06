@@ -22,7 +22,8 @@
     <div class="page active" id="home">
 
     <div class="header">
-    <h1 class="dashboard-title">Dash<span style="color:#F64C72">board</span></h1>
+    <h1 class="dashboard-title"><a href="dashboard.php" 
+        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
     <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
     
 <form action="includes/logout.inc.php" method="post">
@@ -86,7 +87,8 @@ echo $row['contractor_role'];
 
 <div class="page" id="updatecontractor">
 <div class="header">
-                <h1 class="dashboard-title">Dash<span style="color:#F64C72">board</span></h1>
+<h1 class="dashboard-title"><a href="dashboard.php" 
+        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
                 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
                 <div class="property-name">
                 <?php
@@ -174,7 +176,8 @@ echo $row['contractor_name'];
 <div class="page" id="deletecontractor">
 
 <div class="header">
-<h1 class="dashboard-title">Dash<span style="color:#F64C72">board</span></h1>
+<h1 class="dashboard-title"><a href="dashboard.php" 
+        id="title-one">Dash</a><a href="dashboard.php"><span style="color:#F64C72">board</span></a></h1>
 <h2 class="landlord-tracker-title">Landlord<span style="color:#F64C72">Tracker</span></h2>
 
 <form action="includes/logout.inc.php" method="post">
