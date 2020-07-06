@@ -30,12 +30,12 @@
         <p class="pricing-features"><i class="material-icons">check_circle_outline</i>   View Profit/Loss of Each Property</p>
         <p class="pricing-features"><i class="material-icons">check_circle_outline</i>   Track Your Income and Expenses</p>
         <p class="pricing-features"><i class="material-icons">check_circle_outline</i>   Manage Your Tenants and Contractors</p>
-        <p class="pricing-features"><i class="material-icons">check_circle_outline</i>   Completely Free!</p>
+        <p class="pricing-features"><i class="material-icons">check_circle_outline</i>   Completely Free</p>
 
   
     
  
-            <p class="start-trial-link"><a href="signup.php" id="features-pricing-link">Sign up for free here.</p>
+            <p class="start-trial-link"><a href="signup.php" id="features-pricing-link">Sign Up Here</p>
         
                  
         </div>

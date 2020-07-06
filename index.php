@@ -22,7 +22,7 @@
         <div class="header-card">
             <h1 id="sign-up-here"><a href="signup.php">Click <i><span style="font-weight: 400" >here</span></i> to sign up for 
               <span style="font-weight: 400">free</span>.</a></h1>
-            <h1 class="no-credit-card"><span style="color:#F64C72">No credit/debit card details required.</span></h1>
+            <h1 class="no-credit-card"><span style="color:#F64C72">Start managing your properties more effectively <span style="font-weight: 400">now</span>!</span></h1>
         </div>
 
         <h1 class="logged-out-heading">Tailor made for <span style="color:#F64C72">UK landlords.</span></h1>
@@ -31,8 +31,8 @@
         <img src="profit loss screenshot.png" style="width:647.4px;height:350px;right:5.5%;
         top:28%;">
 
-        <h1 class="logged-out-heading2">Cloud-based <span style="color:#F64C72">alternative.</span></h1>
-        <p class="logged-out-subheading2">Always accessible no matter<br>where you are located.</p>
+        <h1 class="logged-out-heading2">Spreadsheet <span style="color:#F64C72">alternative.</span></h1>
+        <p class="logged-out-subheading2">Smooth user-friendly interface<br>and completely free to use.</p>
      
         <h1 class="logged-out-heading3">Provides in-depth <span style="color:#F64C72">analysis.</span></h1>
         <p class="logged-out-subheading3">View your properties' return on<br>investment and projected profit/loss.</p>
