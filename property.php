@@ -234,7 +234,7 @@ echo $row['address_line_one'];
                         $sql = "SELECT deposit FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                         $result = mysqli_query($conn, $sql);
                         $row = mysqli_fetch_array($result);
-                        echo $row['deposit'];  
+                        echo number_format($row['deposit']);  
             ?>" autocomplete="off"></h1>
                         <h1 class="property-detail-new">Date of Purchase:   <input type="date"
                         name="purchase-date" placeholder="dd/mm/yyyy" autocomplete="off"></h1>
@@ -245,7 +245,7 @@ echo $row['address_line_one'];
               $sql = "SELECT original_value FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_array($result);
-              echo $row['original_value'];  
+              echo number_format($row['original_value']);  
                         ?>" autocomplete="off"></h1>
                     <h1 class="property-detail-new">Current Property Value: £   <input type="number" 
                     onkeydown="javascript: return event.keyCode === 8 ||
@@ -254,7 +254,7 @@ echo $row['address_line_one'];
                                $sql = "SELECT current_value FROM address WHERE id = '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                                $result = mysqli_query($conn, $sql);
                                $row = mysqli_fetch_array($result);
-                               echo $row['current_value'];  
+                               echo number_format($row['current_value']);  
                         ?>" autocomplete="off"></h1>
                     <h1 class="property-detail-new">Address:<br><input type="text"
                         name="address-line-one" placeholder="<?php           
@@ -317,7 +317,7 @@ echo $row['address_line_one'];
                        $sql = "SELECT rent_amount FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                        $result = mysqli_query($conn, $sql);
                        $row = mysqli_fetch_array($result);
-                       echo $row['rent_amount'];  
+                       echo number_format($row['rent_amount']);  
                         
                         ?>" autocomplete="off"></h1>
                     <h1 class="rent-tenant-detail-new">Number of Payments Missed By Tenant:   <input type="number"
@@ -425,7 +425,7 @@ echo $row['address_line_one'];
                                    $sql = "SELECT mortgage_payment FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                                    $result = mysqli_query($conn, $sql);
                                    $row = mysqli_fetch_array($result);
-                                   echo $row['mortgage_payment'];  
+                                   echo number_format($row['mortgage_payment']);  
                             ?>"></p>
                         <p class="expense-types-new">Agency Fees: <input type="number"
                         onkeydown="javascript: return event.keyCode === 8 ||
@@ -434,7 +434,7 @@ echo $row['address_line_one'];
                                    $sql = "SELECT agency_fees_monthly FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                                    $result = mysqli_query($conn, $sql);
                                    $row = mysqli_fetch_array($result);
-                                   echo $row['agency_fees_monthly'];  
+                                   echo number_format($row['agency_fees_monthly']);  
                             ?>"></p>
                         <p class="expense-types-new">Household Bills: <input type="number"
                         onkeydown="javascript: return event.keyCode === 8 ||
@@ -443,7 +443,7 @@ echo $row['address_line_one'];
                                         $sql = "SELECT household_bills FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                                         $result = mysqli_query($conn, $sql);
                                         $row = mysqli_fetch_array($result);
-                                        echo $row['household_bills'];  
+                                        echo number_format($row['household_bills']);  
                             ?>"></p>
                         <p class="expense-types-new">Landlord Insurance: <input type="number"
                         onkeydown="javascript: return event.keyCode === 8 ||
@@ -452,7 +452,7 @@ echo $row['address_line_one'];
                                       $sql = "SELECT landlord_insurance FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                                       $result = mysqli_query($conn, $sql);
                                       $row = mysqli_fetch_array($result);
-                                      echo $row['landlord_insurance'];  
+                                      echo number_format($row['landlord_insurance']);  
                             ?>"></p>
                                    <span class="tooltiptextadd">Any costs incurred on a monthly basis. Agency fees refers to
                             any fees incurred from the property being managed by an agency. Household bills include
@@ -467,7 +467,7 @@ echo $row['address_line_one'];
                                            $sql = "SELECT agency_fees FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                                            $result = mysqli_query($conn, $sql);
                                            $row = mysqli_fetch_array($result);
-                                           echo $row['agency_fees'];   
+                                           echo number_format($row['agency_fees']);   
                             ?>"></p>
                         <p class="expense-types-new">Stamp Duty: <input type="number"
                         onkeydown="javascript: return event.keyCode === 8 ||
@@ -476,7 +476,7 @@ echo $row['address_line_one'];
                                               $sql = "SELECT stamp_duty FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                                               $result = mysqli_query($conn, $sql);
                                               $row = mysqli_fetch_array($result);
-                                              echo $row['stamp_duty'];  
+                                              echo number_format($row['stamp_duty']);  
                             ?>"></p>
                         <p class="expense-types-new">Solicitor's Fees: <input type="number"
                         onkeydown="javascript: return event.keyCode === 8 ||
@@ -485,7 +485,7 @@ echo $row['address_line_one'];
                                              $sql = "SELECT solicitors_fees FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                                              $result = mysqli_query($conn, $sql);
                                              $row = mysqli_fetch_array($result);
-                                             echo $row['solicitors_fees'];  
+                                             echo number_format($row['solicitors_fees']);  
                             ?>"></p>
                                   <span class="tooltiptextadd">Costs incurred when the property was purchased. Agency fees refer
                                 to the cost of having an agency find a tenant.
@@ -500,7 +500,7 @@ echo $row['address_line_one'];
                                                                    $sql = "SELECT repairs FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                                                                    $result = mysqli_query($conn, $sql);
                                                                    $row = mysqli_fetch_array($result);
-                                                                   echo $row['repairs'];  
+                                                                   echo number_format($row['repairs']);  
                             ?>"></p>
                         <p class="expense-types-new">Miscellaneous: <input type="number"
                         onkeydown="javascript: return event.keyCode === 8 ||
@@ -509,7 +509,7 @@ echo $row['address_line_one'];
                                                                    $sql = "SELECT misc FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                                                                    $result = mysqli_query($conn, $sql);
                                                                    $row = mysqli_fetch_array($result);
-                                                                   echo $row['misc'];  
+                                                                   echo number_format($row['misc']);  
                             ?>"></p>
                               <span class="tooltiptextadd">Includes any repair costs that accumulate during ownership of the property.
                                 Any other costs not listed can be included in miscellaneous.
@@ -558,25 +558,25 @@ echo $row['address_line_one'];
                 $sql = "SELECT mortgage_payment FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_array($result);
-                echo $row['mortgage_payment'];  
+                echo number_format($row['mortgage_payment']);  
                     ?></span></p>
                         <p class="expense-types">Agency Fees: <span style="color:#F64C72">£<?php
                    $sql = "SELECT agency_fees_monthly FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                    $result = mysqli_query($conn, $sql);
                    $row = mysqli_fetch_array($result);
-                   echo $row['agency_fees_monthly'];  
+                   echo number_format($row['agency_fees_monthly']);  
                         ?></span></p>
                         <p class="expense-types">Household Bills: <span style="color:#F64C72">£<?php
                 $sql = "SELECT household_bills FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_array($result);
-                echo $row['household_bills'];  
+                echo number_format($row['household_bills']);  
                         ?></span></p>
                         <p class="expense-types">Landlord Insurance: <span style="color:#F64C72">£<?php
      $sql = "SELECT landlord_insurance FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
      $result = mysqli_query($conn, $sql);
      $row = mysqli_fetch_array($result);
-     echo $row['landlord_insurance'];  
+     echo number_format($row['landlord_insurance']);  
                         ?></span></p>
                         <p class="expense-types"><span style="color:#F64C72"><span style="font-weight: 350">Total: £<?php
                              $sql = "SELECT * FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
@@ -601,19 +601,19 @@ echo $row['address_line_one'];
       $sql = "SELECT agency_fees FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
       $result = mysqli_query($conn, $sql);
       $row = mysqli_fetch_array($result);
-      echo $row['agency_fees']; 
+      echo number_format($row['agency_fees']); 
                         ?></span></p>
                         <p class="expense-types">Stamp Duty: <span style="color:#F64C72">£<?php
          $sql = "SELECT stamp_duty FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
          $result = mysqli_query($conn, $sql);
          $row = mysqli_fetch_array($result);
-         echo $row['stamp_duty']; 
+         echo number_format($row['stamp_duty']); 
                         ?></span></p>
                         <p class="expense-types">Solicitor's Fees: <span style="color:#F64C72">£<?php
      $sql = "SELECT solicitors_fees FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
      $result = mysqli_query($conn, $sql);
      $row = mysqli_fetch_array($result);
-     echo $row['solicitors_fees']; 
+     echo number_format($row['solicitors_fees']); 
                         ?></span></p>
                         <p class="expense-types"><span style="color:#F64C72"><span style="font-weight: 350">Total: £<?php
                                 $sql = "SELECT * FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
@@ -689,7 +689,7 @@ echo $row['address_line_one'];
                          $sql = "SELECT rent_amount FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                          $result = mysqli_query($conn, $sql);
                          $row = mysqli_fetch_array($result);
-                         echo $row['rent_amount']; 
+                         echo number_format($row['rent_amount']); 
                         ?></span></h1>
                 <h1 class="rent-tenant-detail">Number of Payments Missed By Tenant: <span style="color:#F64C72"><?php
                          $sql = "SELECT number_of_payments_missed FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
@@ -788,20 +788,20 @@ echo $row['address_line_one'];
                       $sql = "SELECT original_value FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                       $result = mysqli_query($conn, $sql);
                       $row = mysqli_fetch_array($result);
-                      echo $row['original_value']; 
+                      echo number_format($row['original_value']); 
             ?></span></h1>
                 <h1 class="property-detail">Current Property Value: <span style="color:#F64C72">£<?php
                      $sql = "SELECT current_value FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                      $result = mysqli_query($conn, $sql);
                      $row = mysqli_fetch_array($result);
-                     echo $row['current_value']; 
+                     echo number_format($row['current_value']); 
             ?></span></h1>
                 <h1 class="property-detail">Original Deposit: <span style="color:#F64C72">£<?php
                       $sql = "SELECT deposit FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";
                       $result = mysqli_query($conn, $sql);
                       $row = mysqli_fetch_array($result);
                       $deposit = $row['deposit']; 
-                      echo $deposit;
+                      echo number_format($deposit);
             ?></span></h1>
                 <h1 class="property-detail">Date of Purchase: <span style="color:#F64C72"><?php
                                $sql = "SELECT date_of_purchase FROM address WHERE id =  '" . $_SESSION['userId'] . "' ORDER BY address_id DESC LIMIT $propertyChosen;";

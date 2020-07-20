@@ -14,9 +14,9 @@ $contractorPicked = $row['contractor_id'];
 
 
 $sql = "DELETE FROM contractors WHERE contractor_id = '$contractorPicked';";
-if(mysqli_query($conn, $sql)) { 
-    echo "Contractor was deleted successfully."; 
-}  
+if (mysqli_query($conn, $sql)) { 
+    //echo "Contractor was deleted successfully."; 
+
 
 $nullValue = "0";
 
@@ -203,6 +203,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
 
 mysqli_close($conn); 
 
+}
 }
 session_start();
 header("Location: ../dashboard");

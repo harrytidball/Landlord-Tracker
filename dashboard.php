@@ -54,7 +54,7 @@
             
             <select name="properties" onchange="this.form.submit();">
             <option value="">Select Property</option>
-    
+            
             <option value="1">
             <li class="choose-property">
             <?php
@@ -64,7 +64,7 @@
                       echo $row['address_line_one'];  
             ?>
             </li></option>
-    
+            
             <option value="1, 1">
             <li class="choose-property">
             <?php

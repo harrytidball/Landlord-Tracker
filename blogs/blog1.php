@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <link href= "css\main.css" rel = "stylesheet">
-    <link href= "css\blog.css" rel = "stylesheet">
+        
+    <link href= "..\css\main.css" rel = "stylesheet">
+    <link href= "..\css\blog.css" rel = "stylesheet">
     <head>
     <title>Landlord Tracker | Blog</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
@@ -18,6 +19,6 @@
       <a href="features" id="features-link">Features</a>
 
         </div>
-
-        </body>
-    </html> 
+    
+	</body>
+</html>

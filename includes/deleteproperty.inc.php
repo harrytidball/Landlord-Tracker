@@ -59,8 +59,8 @@ if (isset($_POST['delete-property'])) {
 
 $sql = "DELETE FROM address WHERE address_id = '$propertyPicked';";
 if(mysqli_query($conn, $sql)) { 
-    echo "Property was deleted successfully."; 
-}  
+    //echo "Property was deleted successfully."; 
+
 
 $nullValue = "0";
 
@@ -170,6 +170,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
 
 mysqli_close($conn); 
 
+}
 }
 
 session_start();
